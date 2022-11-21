@@ -21,7 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let navigationController = UINavigationController()
         //navigationController.navigationBar.isHidden = true
         
-        let nextVC = SplashViewController()
+        let nextVC = LoginViewController()
         navigationController.setViewControllers([nextVC], animated: true)
         
         window.rootViewController = navigationController

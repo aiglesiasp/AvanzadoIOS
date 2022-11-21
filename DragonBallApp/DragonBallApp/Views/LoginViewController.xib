@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="DragonBallApp" customModuleProvider="target">
+            <connections>
+                <outlet property="activityIndicator" destination="fKc-hf-zWF" id="ofC-nb-LTl"/>
+                <outlet property="password" destination="zp2-Yn-sCX" id="qp4-Wn-DkZ"/>
+                <outlet property="username" destination="C89-pf-F2L" id="Kxe-Vq-hzp"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.65000000000000002" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fondoGoku" translatesAutoresizingMaskIntoConstraints="NO" id="Ao2-uT-hzc">
+                    <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                </imageView>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zp2-Yn-sCX">
+                    <rect key="frame" x="70" y="405" width="250" height="34"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="250" id="mR7-OO-ekB"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES" textContentType="password"/>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="C89-pf-F2L">
+                    <rect key="frame" x="70" y="351" width="250" height="34"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="250" id="84e-vq-dP3"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no" textContentType="username"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nup-3F-l85">
+                    <rect key="frame" x="145" y="479" width="100" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="5Bi-Px-MEV"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="filled" title="ENTRAR"/>
+                    <connections>
+                        <action selector="loginPress:" destination="-1" eventType="touchUpInside" id="RPX-x7-a5A"/>
+                    </connections>
+                </button>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="fKc-hf-zWF">
+                    <rect key="frame" x="176.66666666666666" y="403.66666666666669" width="37" height="37"/>
+                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </activityIndicatorView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="Ao2-uT-hzc" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="5QN-dH-wwj"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Ao2-uT-hzc" secondAttribute="trailing" id="BKI-Hr-Lp4"/>
+                <constraint firstAttribute="bottom" secondItem="Ao2-uT-hzc" secondAttribute="bottom" id="H2n-3K-FBb"/>
+                <constraint firstItem="zp2-Yn-sCX" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="KcI-eN-sBq"/>
+                <constraint firstItem="Ao2-uT-hzc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="SlC-dX-b0G"/>
+                <constraint firstItem="zp2-Yn-sCX" firstAttribute="top" secondItem="C89-pf-F2L" secondAttribute="bottom" constant="20" id="W3S-Hr-4Ax"/>
+                <constraint firstItem="fKc-hf-zWF" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="XVX-uH-pDI"/>
+                <constraint firstItem="C89-pf-F2L" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="bNu-Ti-RIs"/>
+                <constraint firstItem="nup-3F-l85" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="bhn-gg-GwB"/>
+                <constraint firstItem="fKc-hf-zWF" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="cuS-wM-L13"/>
+                <constraint firstItem="zp2-Yn-sCX" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="rjR-gh-wZb"/>
+                <constraint firstItem="nup-3F-l85" firstAttribute="top" secondItem="zp2-Yn-sCX" secondAttribute="bottom" constant="40" id="s9T-JL-Ova"/>
+            </constraints>
+            <point key="canvasLocation" x="132" y="-11"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="fondoGoku" width="983" height="1113"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
