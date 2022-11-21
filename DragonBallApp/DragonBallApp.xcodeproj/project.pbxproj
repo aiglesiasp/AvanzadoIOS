@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5B0111A0292BA43000B4C74E /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B01119E292BA43000B4C74E /* SplashViewController.swift */; };
 		5B0111A1292BA43000B4C74E /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B01119F292BA43000B4C74E /* SplashViewController.xib */; };
+		5B0111A3292BA5E000B4C74E /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0111A2292BA5E000B4C74E /* SplashViewModel.swift */; };
 		5B15C271292B9EE800058878 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B15C270292B9EE800058878 /* AppDelegate.swift */; };
 		5B15C273292B9EE800058878 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B15C272292B9EE800058878 /* SceneDelegate.swift */; };
 		5B15C27B292B9EE800058878 /* DragonBallApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5B15C279292B9EE800058878 /* DragonBallApp.xcdatamodeld */; };
@@ -37,6 +38,7 @@
 /* Begin PBXFileReference section */
 		5B01119E292BA43000B4C74E /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		5B01119F292BA43000B4C74E /* SplashViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashViewController.xib; sourceTree = "<group>"; };
+		5B0111A2292BA5E000B4C74E /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		5B15C26D292B9EE800058878 /* DragonBallApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DragonBallApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B15C270292B9EE800058878 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B15C272292B9EE800058878 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -127,8 +129,8 @@
 		5BE105AA292B9F630011CAB0 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				5B15C272292B9EE800058878 /* SceneDelegate.swift */,
 				5B15C270292B9EE800058878 /* AppDelegate.swift */,
+				5B15C272292B9EE800058878 /* SceneDelegate.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -151,6 +153,7 @@
 		5BE105AF292BA1060011CAB0 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				5B0111A2292BA5E000B4C74E /* SplashViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B0111A3292BA5E000B4C74E /* SplashViewModel.swift in Sources */,
 				5B15C27B292B9EE800058878 /* DragonBallApp.xcdatamodeld in Sources */,
 				5B15C271292B9EE800058878 /* AppDelegate.swift in Sources */,
 				5B15C273292B9EE800058878 /* SceneDelegate.swift in Sources */,
