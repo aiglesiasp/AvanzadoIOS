@@ -19,10 +19,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let scene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: scene)
         let navigationController = UINavigationController()
-        navigationController.navigationBar.isHidden = true
+        //navigationController.navigationBar.isHidden = true
         
         let nextVC = SplashViewController()
-        navigationController.setViewControllers([nextVC], animated: false)
+        navigationController.setViewControllers([nextVC], animated: true)
         
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
