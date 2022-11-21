@@ -6,17 +6,15 @@
 //
 
 import Foundation
+import KeychainSwift
 
 final class LoginViewModel {
     
     //MARK: Constant
     private let network: NetworkModel
-    //private let keyChain: KeyChainHelper
     
-    init(network: NetworkModel = NetworkModel()){
-    //     keyChain: KeyChainHelper = KeyChainHelper.standar) {
+    init(network: NetworkModel = NetworkModel()) {
        self.network = network
-    //    self.keyChain = keyChain
     }
     
     //MARK: Funcion que al pulsar llame al login
@@ -25,9 +23,9 @@ final class LoginViewModel {
     }
     
     //MARK: Funcion salvar token
-    func saveToken(token: String) {
-        let data = Data(token.utf8)
-        //keyChain.save(data: data, service: "login", account: "Aitor")
+    func saveToken(token: String) { //TODO:
+        //let data = Data(token.utf8)
+        KeychainSwift().set(token, forKey: "KCToken")
     }
     
 }

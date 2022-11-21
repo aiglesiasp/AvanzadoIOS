@@ -14,7 +14,7 @@ enum NetworkError: Error, Equatable {
     case dataFormatting
     case other
     case noData
-    case errorCode(Int?)
+    case errorCode(code: Int?)
     case tokenFormatError
     case decoding
     case unknown
@@ -76,7 +76,7 @@ class NetworkModel {
             guard let httpResponse = (response as? HTTPURLResponse),
                   httpResponse.statusCode == 200
             else {
-                completion(nil, NetworkError.errorCode((response as? HTTPURLResponse)?.statusCode))
+                completion(nil, NetworkError.errorCode(code: (response as? HTTPURLResponse)?.statusCode))
                 return
             }
             //Miramos el token
@@ -104,20 +104,15 @@ class NetworkModel {
             completion([], NetworkError.other)
             return
         }
+        //Creo el BODY
+        var urlComponents = URLComponents()
+        urlComponents.queryItems = [URLQueryItem(name: "name", value: "")]
         //Creo la REQUEST
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "POST"
         urlRequest.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        
-        //Necesitamos pasarle un BODY a la request
-        struct Body: Encodable {
-            let name: String
-        }
-        let body = Body(name: name)
-        
-        //Le pasamos el body a la request
-        urlRequest.httpBody = try? JSONEncoder().encode(body)
+        urlRequest.httpBody = urlComponents.query?.data(using: .utf8)
         
         //Vuelvo a crear la tarea para verificar todo
         //MARK: Creamos el DATATASK que usa este REQUEST
@@ -138,7 +133,7 @@ class NetworkModel {
             guard let httpResponse = (response as? HTTPURLResponse),
                   httpResponse.statusCode == 200
             else {
-                completion([], NetworkError.errorCode((response as? HTTPURLResponse)?.statusCode))
+                completion([], NetworkError.errorCode(code: (response as? HTTPURLResponse)?.statusCode))
                 return
             }
             
@@ -165,12 +160,15 @@ class NetworkModel {
             completion([], NetworkError.tokenFormatError)
             return
         }
+        //Creo el BODY
+        var urlComponents = URLComponents()
+        urlComponents.queryItems = [URLQueryItem(name: "id", value: id)]
         //Creo la REQUEST
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "POST"
         urlRequest.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        
+        urlRequest.httpBody = urlComponents.query?.data(using: .utf8)
         //Necesitamos pasarle un BODY a la request
         struct Body: Encodable {
             let id: String
@@ -199,7 +197,7 @@ class NetworkModel {
             guard let httpResponse = (response as? HTTPURLResponse),
                   httpResponse.statusCode == 200
             else {
-                completion([], NetworkError.errorCode((response as? HTTPURLResponse)?.statusCode))
+                completion([], NetworkError.errorCode(code: (response as? HTTPURLResponse)?.statusCode))
                 return
             }
             
@@ -223,20 +221,14 @@ class NetworkModel {
             return
         }
         
-        //var urlComponents = URLComponents()
-        //urlComponents.queryItems = [URLQueryItem(name: "id", value: id)]
+        var urlComponents = URLComponents()
+        urlComponents.queryItems = [URLQueryItem(name: "id", value: id)]
         
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "POST"
         urlRequest.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        //urlRequest.httpBody = urlComponents.query?.data(using: .utf8)
-        struct Body: Encodable {
-            let id: String
-        }
-        let body = Body(id: id)
-        //Le pasamos el body a la request
-        urlRequest.httpBody = try? JSONEncoder().encode(body)
+        urlRequest.httpBody = urlComponents.query?.data(using: .utf8)
         
         //MARK: Creamos el DATATASK que usa este REQUEST
         let task = URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
@@ -254,7 +246,7 @@ class NetworkModel {
             guard let httpResponse = (response as? HTTPURLResponse),
                   httpResponse.statusCode == 200
             else {
-                completion([], NetworkError.errorCode((response as? HTTPURLResponse)?.statusCode))
+                completion([], NetworkError.errorCode(code: (response as? HTTPURLResponse)?.statusCode))
                 return
             }
             
@@ -269,5 +261,9 @@ class NetworkModel {
     }
 }
 
+
+extension NetworkModel {
+    
+}
 
 

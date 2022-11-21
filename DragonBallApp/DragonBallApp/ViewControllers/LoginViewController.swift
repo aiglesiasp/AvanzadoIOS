@@ -57,11 +57,10 @@ class LoginViewController: UIViewController {
                 }
                 
                 if let token = token {
-                    self.viewModel.saveToken(token: token)
+                    self.viewModel.saveToken(token: token) //TODO: 
                     DispatchQueue.main.async {
                         self.activityIndicator.stopAnimating()
                         self.view.isUserInteractionEnabled = true
-                        //self.performSegue(withIdentifier: "goToMap", sender: nil)
                         let nextVC = HomeViewController()
                         self.navigationController?.setViewControllers([nextVC], animated: true)
                     }
