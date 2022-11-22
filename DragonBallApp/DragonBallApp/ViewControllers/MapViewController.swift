@@ -15,7 +15,7 @@ class MapViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
     
     //MARK: - Variables
-    var viewModel = HomeViewModel()
+    //var viewModel = HomeViewModel()
     
     
     //MARK: - Cicle of life
@@ -27,7 +27,7 @@ class MapViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         //viewModel.checkLocationServices()
-        viewModel.viewWillAppear()
+        //viewModel.viewWillAppear()
     }
     
     override func viewDidAppear(_ animated: Bool) {

@@ -70,10 +70,10 @@ class HomeTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         //Creo el Detail ViewConroller
-        let nextVC = MapViewController()
+        let nextVC = DetailViewController()
         //Le paso la lista de heroes
-        //]nextVC.set(model: heroes[indexPath.row])
-        navigationController?.pushViewController(nextVC, animated: true)
+        nextVC.set(model: heroesArray[indexPath.row])
+        self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
 }

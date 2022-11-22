@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="DragonBallApp" customModuleProvider="target">
             <connections>
                 <outlet property="activityIndicator" destination="fKc-hf-zWF" id="ofC-nb-LTl"/>
+                <outlet property="loginButton" destination="nup-3F-l85" id="Faa-xY-j7X"/>
                 <outlet property="password" destination="zp2-Yn-sCX" id="qp4-Wn-DkZ"/>
                 <outlet property="username" destination="C89-pf-F2L" id="Kxe-Vq-hzp"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>

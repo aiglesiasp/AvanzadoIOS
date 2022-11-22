@@ -9,17 +9,13 @@ import UIKit
 import KeychainSwift
 
 class LoginViewController: UIViewController {
-
+    
     //MARK: IBOUTLETS
     
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    
-    
-    //MARK: Constant
-    let viewModel = LoginViewModel()
-    
+    @IBOutlet weak var loginButton: UIButton!
     
     //MARK: Cicle of live
     override func viewDidLoad() {
@@ -35,13 +31,14 @@ class LoginViewController: UIViewController {
     //MARK: ACTIONS
     
     @IBAction func loginPress(_ sender: Any) {
+        let model = NetworkModel()
+        let nextVC = HomeTableViewController()
         guard let user = username.text,
               let password = password.text else {
-            //Show error validation textFields
             return
         }
         if user.isEmpty || password.isEmpty {
-            //Show empty validations
+            self.showAlert(title: "Missing fields", message: "Please complete all fields to login")
             return
         }
         
@@ -49,26 +46,33 @@ class LoginViewController: UIViewController {
         self.activityIndicator.startAnimating()
         self.view.isUserInteractionEnabled = false
         
-        viewModel.callLoginService(
-            user: user,
-            password: password,
-            completion: { token, error in
-                if error != nil {
-                    //show the correct error
+        //Ahora llamo a la funcion login del Model
+        model.login(user: user, password: password) { [weak self] token, error in
+            
+            DispatchQueue.main.async {
+                //Acivo boton y desactivo indicator
+                self?.loginButton.isEnabled = true
+                self?.activityIndicator.stopAnimating()
+                
+                if let error = error {
+                    self?.showAlert(title: "There was an error", message: error.localizedDescription)
+                    return
+                }
+                //Compruebo que el token no esta vacio y son iguales
+                guard let token = token, !token.isEmpty else {
+                    self?.showAlert(title: "There is no Token")
+                    return
+                    
                 }
                 
-                if let token = token {
-                    self.viewModel.saveToken(token: token) //TODO: 
-                    DispatchQueue.main.async {
-                        self.activityIndicator.stopAnimating()
-                        self.view.isUserInteractionEnabled = true
-                        let nextVC = HomeTableViewController()
-                        self.navigationController?.setViewControllers([nextVC], animated: true)
-                    }
-                }
-    })
+                //Guardamos el token
+                LocalDataModel.save(token: token)
+
+                //Llamo a la siguiente vista
+                self?.navigationController?.setViewControllers([nextVC], animated: true)
+            }
+        }
         
         
     }
-
 }
