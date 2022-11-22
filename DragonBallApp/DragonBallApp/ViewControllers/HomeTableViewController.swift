@@ -6,7 +6,7 @@
 //
 
 import UIKit
-//import KeychainSwift
+import KeychainSwift
 
 class HomeTableViewController: UITableViewController {
         
@@ -22,8 +22,8 @@ class HomeTableViewController: UITableViewController {
         tableView?.register(UINib(nibName: "HomeTableViewCell", bundle: nil), forCellReuseIdentifier: "viewCell")
         
         //MARK: CONSEGUIMOS EL TOKEN
-        //guard let token = KeychainSwift().get("KCToken") else {return}
-        guard let token = LocalDataModel.getToken() else {return}
+        guard let token = KeychainSwift().get("KCToken") else {return}
+        
         //MARK: - LLAMADA A RED -
         let networkModel = NetworkModel(token: token)
                                         

@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import KeychainSwift
 
 class LoginViewController: UIViewController {
     
@@ -66,7 +66,7 @@ class LoginViewController: UIViewController {
                 }
                 
                 //Guardamos el token
-                LocalDataModel.save(token: token)
+                KeychainSwift().set(token, forKey: "KCToken")
 
                 //Llamo a la siguiente vista
                 self?.navigationController?.setViewControllers([nextVC], animated: true)

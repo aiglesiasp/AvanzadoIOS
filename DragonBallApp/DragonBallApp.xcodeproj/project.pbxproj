@@ -32,7 +32,6 @@
 		5B3ED43A292C121C0026B419 /* noHeroes.json in Resources */ = {isa = PBXBuildFile; fileRef = 5B3ED439292C121B0026B419 /* noHeroes.json */; };
 		5B3ED43C292C12240026B419 /* transformation.json in Resources */ = {isa = PBXBuildFile; fileRef = 5B3ED43B292C12240026B419 /* transformation.json */; };
 		5B3ED43E292C122A0026B419 /* noTransformation.json in Resources */ = {isa = PBXBuildFile; fileRef = 5B3ED43D292C122A0026B419 /* noTransformation.json */; };
-		5B765805292D05E600CE6614 /* LocalDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B765804292D05E600CE6614 /* LocalDataModel.swift */; };
 		5B765808292D06F100CE6614 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B765806292D06F100CE6614 /* DetailViewController.swift */; };
 		5B765809292D06F100CE6614 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B765807292D06F100CE6614 /* DetailViewController.xib */; };
 		5B9D21A8292D148D0056A8FF /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5B9D21A7292D148D0056A8FF /* KeychainSwift */; };
@@ -77,7 +76,6 @@
 		5B3ED439292C121B0026B419 /* noHeroes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = noHeroes.json; sourceTree = "<group>"; };
 		5B3ED43B292C12240026B419 /* transformation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = transformation.json; sourceTree = "<group>"; };
 		5B3ED43D292C122A0026B419 /* noTransformation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = noTransformation.json; sourceTree = "<group>"; };
-		5B765804292D05E600CE6614 /* LocalDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataModel.swift; sourceTree = "<group>"; };
 		5B765806292D06F100CE6614 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		5B765807292D06F100CE6614 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -183,7 +181,6 @@
 				5B3ED423292C02E20026B419 /* HeroModel.swift */,
 				5B3ED425292C030D0026B419 /* TransformationModel.swift */,
 				5B3ED427292C05C40026B419 /* HeroCoordenates.swift */,
-				5B765804292D05E600CE6614 /* LocalDataModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -347,7 +344,6 @@
 				5B3ED428292C05C40026B419 /* HeroCoordenates.swift in Sources */,
 				5B14A28F292C55A900934566 /* UIViewControllerExtension.swift in Sources */,
 				5B3ED424292C02E20026B419 /* HeroModel.swift in Sources */,
-				5B765805292D05E600CE6614 /* LocalDataModel.swift in Sources */,
 				5B3ED426292C030D0026B419 /* TransformationModel.swift in Sources */,
 				5B15C27B292B9EE800058878 /* DragonBallApp.xcdatamodeld in Sources */,
 				5B15C271292B9EE800058878 /* AppDelegate.swift in Sources */,
