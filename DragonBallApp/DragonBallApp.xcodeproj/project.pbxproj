@@ -36,6 +36,7 @@
 		5B765809292D06F100CE6614 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B765807292D06F100CE6614 /* DetailViewController.xib */; };
 		5B9D21A8292D148D0056A8FF /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5B9D21A7292D148D0056A8FF /* KeychainSwift */; };
 		5B9D21AA292D1B420056A8FF /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9D21A9292D1B420056A8FF /* LoginViewModel.swift */; };
+		5B9D21AC292D23AC0056A8FF /* HomeTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9D21AB292D23AC0056A8FF /* HomeTableViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		5B765806292D06F100CE6614 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		5B765807292D06F100CE6614 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		5B9D21A9292D1B420056A8FF /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewModel.swift; path = "../../../../../../.Trash/DragonBallApp 15.13.45/DragonBallApp/ViewModels/LoginViewModel.swift"; sourceTree = "<group>"; };
+		5B9D21AB292D23AC0056A8FF /* HomeTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				5B9D21A9292D1B420056A8FF /* LoginViewModel.swift */,
+				5B9D21AB292D23AC0056A8FF /* HomeTableViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B9D21AC292D23AC0056A8FF /* HomeTableViewModel.swift in Sources */,
 				5B3ED419292BFB840026B419 /* LoginViewController.swift in Sources */,
 				5B14A287292C4E9B00934566 /* HomeTableViewCell.swift in Sources */,
 				5B3ED428292C05C40026B419 /* HeroCoordenates.swift in Sources */,

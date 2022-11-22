@@ -8,10 +8,9 @@
 import UIKit
 import KeychainSwift
 
-class HomeTableViewController: UITableViewController {
+final class HomeTableViewController: UITableViewController {
         
-    //DECLARAMOS UN ARRAY DE HEROES
-    var heroesArray: [Hero] = []
+   let viewModel = HomeTableViewModel()
        
     //MARK: - FUNCION VISUAL
     override func viewDidLoad() {
@@ -21,23 +20,25 @@ class HomeTableViewController: UITableViewController {
         //MARK: - REGISTRAR NUESTRA CELDA -
         tableView?.register(UINib(nibName: "HomeTableViewCell", bundle: nil), forCellReuseIdentifier: "viewCell")
         
-        //MARK: CONSEGUIMOS EL TOKEN
-        guard let token = KeychainSwift().get("KCToken") else {return}
         
-        //MARK: - LLAMADA A RED -
-        let networkModel = NetworkModel(token: token)
-                                        
-        networkModel.getHeroes { [weak self] heroes, _ in
-            guard let self = self else { return }
-                self.heroesArray = heroes
-            
+        viewModel.onError = { message in
             DispatchQueue.main.async {
-                self.tableView.reloadData()
+                print(message)
             }
-            
         }
         
+        viewModel.onSuccess = { [weak self] in
+            DispatchQueue.main.async {
+                self?.tableView.reloadData()
+            }
+        }
+        
+        viewModel.viewDidLoad()
+        
+        
+        
     }
+    
 
     // MARK: - Table view data source -
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -47,7 +48,7 @@ class HomeTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return heroesArray.count
+        return viewModel.heroesArray.count
     }
 
     
@@ -61,7 +62,7 @@ class HomeTableViewController: UITableViewController {
         }
 
         // TODO: - Aqui he pasado variables
-        cell.setHero(model: heroesArray[indexPath.row])
+        cell.setHero(model: viewModel.heroesArray[indexPath.row])
         // Configure the cell...
         return cell
     }
@@ -73,7 +74,8 @@ class HomeTableViewController: UITableViewController {
         //Creo el Detail ViewConroller
         let nextVC = DetailViewController()
         //Le paso la lista de heroes
-        nextVC.set(model: heroesArray[indexPath.row])
+        let hero = viewModel.heroesArray[indexPath.row]
+        nextVC.set(model: hero)
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
