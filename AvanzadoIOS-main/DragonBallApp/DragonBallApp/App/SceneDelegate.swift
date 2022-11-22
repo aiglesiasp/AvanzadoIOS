@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import KeychainSwift
+//import KeychainSwift
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -23,14 +23,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         
         //Obtener el keychain
-        let keychain = KeychainSwift()
-        var nextVC : UIViewController = UIViewController()
-        if keychain.get("KCToken") != nil {
-            nextVC = HomeTableViewController()
-        }else {
-            nextVC = LoginViewController()
-        }
-        
+        //let keychain = KeychainSwift()
+        //var nextVC : UIViewController = UIViewController()
+        //if keychain.get("KCToken") != nil {
+        //    nextVC = HomeTableViewController()
+        //}else {
+        //    nextVC = LoginViewController()
+        //}
+        let nextVC = LoginViewController()
         navigationController.setViewControllers([nextVC], animated: true)
         
         window.rootViewController = navigationController

@@ -26,7 +26,6 @@
 		5B3ED424292C02E20026B419 /* HeroModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3ED423292C02E20026B419 /* HeroModel.swift */; };
 		5B3ED426292C030D0026B419 /* TransformationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3ED425292C030D0026B419 /* TransformationModel.swift */; };
 		5B3ED428292C05C40026B419 /* HeroCoordenates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3ED427292C05C40026B419 /* HeroCoordenates.swift */; };
-		5B3ED430292C0B320026B419 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5B3ED42F292C0B320026B419 /* KeychainSwift */; };
 		5B3ED432292C105F0026B419 /* NetworkModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3ED431292C105F0026B419 /* NetworkModelTest.swift */; };
 		5B3ED436292C11490026B419 /* URLSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3ED435292C11490026B419 /* URLSessionMock.swift */; };
 		5B3ED438292C12140026B419 /* heroes.json in Resources */ = {isa = PBXBuildFile; fileRef = 5B3ED437292C12140026B419 /* heroes.json */; };
@@ -36,6 +35,7 @@
 		5B765805292D05E600CE6614 /* LocalDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B765804292D05E600CE6614 /* LocalDataModel.swift */; };
 		5B765808292D06F100CE6614 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B765806292D06F100CE6614 /* DetailViewController.swift */; };
 		5B765809292D06F100CE6614 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B765807292D06F100CE6614 /* DetailViewController.xib */; };
+		5B9D21A8292D148D0056A8FF /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5B9D21A7292D148D0056A8FF /* KeychainSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,7 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B3ED430292C0B320026B419 /* KeychainSwift in Frameworks */,
+				5B9D21A8292D148D0056A8FF /* KeychainSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,13 +143,13 @@
 		5B15C26F292B9EE800058878 /* DragonBallApp */ = {
 			isa = PBXGroup;
 			children = (
+				5B15C281292B9EE900058878 /* Info.plist */,
 				5B14A28B292C556C00934566 /* Extensions */,
 				5BE105AA292B9F630011CAB0 /* App */,
-				5B15C281292B9EE900058878 /* Info.plist */,
 				5BE105B1292BA1130011CAB0 /* Resources */,
 				5B3ED415292BFB520026B419 /* Models */,
 				5B3ED414292BFB4C0026B419 /* Utils */,
-				5BE105AF292BA1060011CAB0 /* ViewModels */,
+				5B9D21A4292D10CC0056A8FF /* ViewModels */,
 				5B01119D292BA32F00B4C74E /* ViewControllers */,
 				5BE105AE292BA1010011CAB0 /* Views */,
 			);
@@ -172,7 +172,6 @@
 		5B3ED414292BFB4C0026B419 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				5B3ED416292BFB570026B419 /* Views */,
 				5B3ED421292C02AF0026B419 /* NetworkModel.swift */,
 			);
 			path = Utils;
@@ -189,11 +188,11 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		5B3ED416292BFB570026B419 /* Views */ = {
+		5B9D21A4292D10CC0056A8FF /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Views;
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		5BE105AA292B9F630011CAB0 /* App */ = {
@@ -215,13 +214,6 @@
 				5B3ED41E292C024D0026B419 /* MapViewController.xib */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		5BE105AF292BA1060011CAB0 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		5BE105B1292BA1130011CAB0 /* Resources */ = {
@@ -251,7 +243,7 @@
 			);
 			name = DragonBallApp;
 			packageProductDependencies = (
-				5B3ED42F292C0B320026B419 /* KeychainSwift */,
+				5B9D21A7292D148D0056A8FF /* KeychainSwift */,
 			);
 			productName = DragonBallApp;
 			productReference = 5B15C26D292B9EE800058878 /* DragonBallApp.app */;
@@ -305,7 +297,7 @@
 			);
 			mainGroup = 5B15C264292B9EE800058878;
 			packageReferences = (
-				5B3ED42E292C0B320026B419 /* XCRemoteSwiftPackageReference "keychain-swift" */,
+				5B9D21A6292D148D0056A8FF /* XCRemoteSwiftPackageReference "keychain-swift" */,
 			);
 			productRefGroup = 5B15C26E292B9EE800058878 /* Products */;
 			projectDirPath = "";
@@ -657,7 +649,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		5B3ED42E292C0B320026B419 /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
+		5B9D21A6292D148D0056A8FF /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/evgenyneu/keychain-swift";
 			requirement = {
@@ -668,9 +660,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		5B3ED42F292C0B320026B419 /* KeychainSwift */ = {
+		5B9D21A7292D148D0056A8FF /* KeychainSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 5B3ED42E292C0B320026B419 /* XCRemoteSwiftPackageReference "keychain-swift" */;
+			package = 5B9D21A6292D148D0056A8FF /* XCRemoteSwiftPackageReference "keychain-swift" */;
 			productName = KeychainSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
