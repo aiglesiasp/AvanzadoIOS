@@ -22,27 +22,17 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "HEROE"
-                
-        guard let hero = hero else { return }
         
+        guard let hero = hero else {return}
+                
         self.heroeImage.setImage(url: hero.photo)
         self.heroeName.text = hero.name
         self.heroeDescription.text = hero.description
-
-    }
+        }
     
     //MARK: - FUNCION PARA SETEAR UN HEROE -
     func set(model: Hero) {
         hero = model
-    }
-    
-    
-    
-    //MARK: - BOTON QUE LLAMA A LAS TRANSFORMACIONES -
-    @IBAction func onTransformationButtonTap(_ sender: Any) {
-        //let nextVC = TransformationTableViewController()
-        //nextVC.set(heroId: hero?.id ?? "")
-        //navigationController?.pushViewController(nextVC, animated: true)
     }
 }
 

@@ -40,16 +40,11 @@ class NetworkModel {
         self.token = token
     }
     
-    //Creo instancia de objeto singelton
-    //static let shared = NetworkModel()
-    //private init () {
-    //}
-    
     // MARK: - CREO LA FUNCION PARA HACER EL LOGIN Y COMPROBARLO
     //Le paso el escaping porque a lo mejor el completion tarda mas ue la vida de la funcion
     func login(user: String, password: String, completion: @escaping (String?, NetworkError?) -> Void) {
         //CREO LA URL HACIA LA API DE LOGIN y SI FALLA QUE ME DEVUELVA UN ERROR
-        guard let url = URL (string: "https://vapor2022.herokuapp.com/api/auth/login") else {
+        guard let url = URL (string: "https://dragonball.keepcoding.education/api/auth/login") else {
             completion(nil, NetworkError.malformedURL)
             return
         }
@@ -104,7 +99,7 @@ class NetworkModel {
         
         
         //LLAMADA A RED
-        guard let url = URL (string: "https://vapor2022.herokuapp.com/api/heros/all") else {
+        guard let url = URL (string: "https://dragonball.keepcoding.education/api/heros/all") else {
             completion([], NetworkError.malformedURL)
             return
         }
@@ -164,7 +159,7 @@ class NetworkModel {
     
     //MARK: GET LOCALIZATIONS
     func getLocalizacionHeroes(id: String, completion: @escaping ([HeroCoordenates], Error?) -> Void) {
-        guard let url = URL(string: "https://vapor2022.herokuapp.com/api/heros/locations"),
+        guard let url = URL(string: "https://dragonball.keepcoding.education/api/heros/locations"),
               let token = self.token else {
             completion([], NetworkError.malformedURL)
             return
