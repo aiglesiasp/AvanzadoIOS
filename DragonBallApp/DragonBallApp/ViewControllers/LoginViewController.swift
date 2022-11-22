@@ -8,7 +8,7 @@
 import UIKit
 import KeychainSwift
 
-class LoginViewController: UIViewController {
+final class LoginViewController: UIViewController {
     
     //MARK: IBOUTLETS
     
@@ -17,11 +17,31 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var loginButton: UIButton!
     
+    let viewModel = LoginViewModel()
+    
     //MARK: Cicle of live
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        viewModel.onError = { [weak self] message in
+            DispatchQueue.main.async {
+                self?.loginButton.isEnabled = true
+                self?.activityIndicator.stopAnimating()
+            }
+            print(message)
+        }
+        
+        viewModel.onLogin = { [weak self] in
+            DispatchQueue.main.async {
+                self?.loginButton.isEnabled = true
+                self?.activityIndicator.stopAnimating()
+               
+                let nextVC = HomeTableViewController()
+                self?.navigationController?.setViewControllers([nextVC], animated: true)
+            }
+        }
     }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -31,8 +51,7 @@ class LoginViewController: UIViewController {
     //MARK: ACTIONS
     
     @IBAction func loginPress(_ sender: Any) {
-        let model = NetworkModel()
-        let nextVC = HomeTableViewController()
+        
         guard let user = username.text,
               let password = password.text else {
             return
@@ -42,37 +61,10 @@ class LoginViewController: UIViewController {
             return
         }
         
-        self.activityIndicator.isHidden = false
-        self.activityIndicator.startAnimating()
-        self.view.isUserInteractionEnabled = false
+        viewModel.login(with: user, password: password)
         
-        //Ahora llamo a la funcion login del Model
-        model.login(user: user, password: password) { [weak self] token, error in
-            
-            DispatchQueue.main.async {
-                //Acivo boton y desactivo indicator
-                self?.loginButton.isEnabled = true
-                self?.activityIndicator.stopAnimating()
-                
-                if let error = error {
-                    self?.showAlert(title: "There was an error", message: error.localizedDescription)
-                    return
-                }
-                //Compruebo que el token no esta vacio y son iguales
-                guard let token = token, !token.isEmpty else {
-                    self?.showAlert(title: "There is no Token")
-                    return
-                    
-                }
-                
-                //Guardamos el token
-                KeychainSwift().set(token, forKey: "KCToken")
+       
 
-                //Llamo a la siguiente vista
-                self?.navigationController?.setViewControllers([nextVC], animated: true)
-            }
-        }
-        
         
     }
 }

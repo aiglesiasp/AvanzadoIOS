@@ -35,6 +35,7 @@
 		5B765808292D06F100CE6614 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B765806292D06F100CE6614 /* DetailViewController.swift */; };
 		5B765809292D06F100CE6614 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B765807292D06F100CE6614 /* DetailViewController.xib */; };
 		5B9D21A8292D148D0056A8FF /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5B9D21A7292D148D0056A8FF /* KeychainSwift */; };
+		5B9D21AA292D1B420056A8FF /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9D21A9292D1B420056A8FF /* LoginViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,7 @@
 		5B3ED43D292C122A0026B419 /* noTransformation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = noTransformation.json; sourceTree = "<group>"; };
 		5B765806292D06F100CE6614 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		5B765807292D06F100CE6614 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		5B9D21A9292D1B420056A8FF /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewModel.swift; path = "../../../../../../.Trash/DragonBallApp 15.13.45/DragonBallApp/ViewModels/LoginViewModel.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +190,7 @@
 		5B9D21A4292D10CC0056A8FF /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				5B9D21A9292D1B420056A8FF /* LoginViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -347,6 +350,7 @@
 				5B3ED426292C030D0026B419 /* TransformationModel.swift in Sources */,
 				5B15C27B292B9EE800058878 /* DragonBallApp.xcdatamodeld in Sources */,
 				5B15C271292B9EE800058878 /* AppDelegate.swift in Sources */,
+				5B9D21AA292D1B420056A8FF /* LoginViewModel.swift in Sources */,
 				5B14A292292C588300934566 /* HomeTableViewController.swift in Sources */,
 				5B15C273292B9EE800058878 /* SceneDelegate.swift in Sources */,
 				5B3ED422292C02AF0026B419 /* NetworkModel.swift in Sources */,

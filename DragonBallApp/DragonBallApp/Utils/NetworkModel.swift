@@ -170,13 +170,19 @@ class NetworkModel {
             return
         }
         
-        var urlComponents = URLComponents()
-        urlComponents.queryItems = [URLQueryItem(name: "id", value: id)]
+        //Creo el BODY
+        struct Body: Encodable {
+            let id: String
+        }
+        let body = Body(id: id)
+        //var urlComponents = URLComponents()
+        //urlComponents.queryItems = [URLQueryItem(name: "id", value: id)]
         
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "POST"
         urlRequest.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-        urlRequest.httpBody = urlComponents.query?.data(using: .utf8)
+        urlRequest.httpBody = try? JSONEncoder().encode(body)
+        //urlRequest.httpBody = urlComponents.query?.data(using: .utf8)
         
         let task = URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
             guard error == nil else {
