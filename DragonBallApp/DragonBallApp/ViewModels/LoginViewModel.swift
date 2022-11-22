@@ -12,9 +12,12 @@ final class LoginViewModel {
     
     //MARK: Constant
     private let network: NetworkModel
+    private let keychain: KeychainSwift
     
-    init(network: NetworkModel = NetworkModel()) {
-       self.network = network
+    init(network: NetworkModel = NetworkModel(),
+         keychain: KeychainSwift = KeychainSwift()) {
+        self.network = network
+        self.keychain = keychain
     }
     
     //MARK: Funcion que al pulsar llame al login
@@ -23,9 +26,8 @@ final class LoginViewModel {
     }
     
     //MARK: Funcion salvar token
-    func saveToken(token: String) { //TODO:
-        //let data = Data(token.utf8)
-        KeychainSwift().set(token, forKey: "KCToken")
+    func saveToken(token: String) {
+        keychain.set(token, forKey: "KCToken")
     }
     
 }

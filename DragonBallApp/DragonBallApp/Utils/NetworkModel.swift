@@ -21,6 +21,13 @@ enum NetworkError: Error, Equatable {
     case decodingFailed
 }
 
+enum HTTPMethod: String {
+    case get = "GET"
+    case post = "POST"
+}
+
+
+//MARK: - CLASE -
 class NetworkModel {
     //Creo variable session
     let session : URLSession
@@ -94,6 +101,8 @@ class NetworkModel {
     
     //MARK: - CREO FUNCION PARA LISTA DE HEROES -
     func getHeroes (name: String = "", completion: @escaping ([Hero], NetworkError?) -> Void) {
+        
+        
         //LLAMADA A RED
         guard let url = URL (string: "https://vapor2022.herokuapp.com/api/heros/all") else {
             completion([], NetworkError.malformedURL)
@@ -105,14 +114,18 @@ class NetworkModel {
             return
         }
         //Creo el BODY
-        var urlComponents = URLComponents()
-        urlComponents.queryItems = [URLQueryItem(name: "name", value: "")]
+        struct Body: Encodable {
+            let name: String
+        }
+        let body = Body(name: name)
+        //var urlComponents = URLComponents()
+        //urlComponents.queryItems = [URLQueryItem(name: "name", value: "")]
         //Creo la REQUEST
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "POST"
         urlRequest.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        urlRequest.httpBody = urlComponents.query?.data(using: .utf8)
+        urlRequest.httpBody = try? JSONEncoder().encode(body)
         
         //Vuelvo a crear la tarea para verificar todo
         //MARK: Creamos el DATATASK que usa este REQUEST
@@ -147,74 +160,10 @@ class NetworkModel {
         }
         task.resume()
     }
-    
-    //MARK: - CREO FUNCION PARA LISTA DE HEROES -
-    func getTransformation (id: String, completion: @escaping ([Transformation], NetworkError?) -> Void) {
-        //LLAMADA A RED
-        guard let url = URL (string: "https://vapor2022.herokuapp.com/api/heros/tranformations") else {
-            completion([], NetworkError.malformedURL)
-            return
-        }
-        //CHEQUEO TOKEN
-        guard let token = self.token else {
-            completion([], NetworkError.tokenFormatError)
-            return
-        }
-        //Creo el BODY
-        var urlComponents = URLComponents()
-        urlComponents.queryItems = [URLQueryItem(name: "id", value: id)]
-        //Creo la REQUEST
-        var urlRequest = URLRequest(url: url)
-        urlRequest.httpMethod = "POST"
-        urlRequest.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-        urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        urlRequest.httpBody = urlComponents.query?.data(using: .utf8)
-        //Necesitamos pasarle un BODY a la request
-        struct Body: Encodable {
-            let id: String
-        }
-        let body = Body(id: id)
-        
-        //Le pasamos el body a la request
-        urlRequest.httpBody = try? JSONEncoder().encode(body)
-        
-        
-        //MARK: Creamos el DATATASK que usa este REQUEST
-        let task = session.dataTask(with: urlRequest) { data, response, error in
-            //Compruebo que el error es nil para seguir, sino salta el error
-            guard error == nil
-            else {
-                completion([], NetworkError.other)
-                return
-            }
-            //Miramos que la data tenga contenido
-            guard let data = data
-            else {
-                completion([], NetworkError.noData)
-                return
-            }
-            //Miramos e tipo de respuesta recibido
-            guard let httpResponse = (response as? HTTPURLResponse),
-                  httpResponse.statusCode == 200
-            else {
-                completion([], NetworkError.errorCode(code: (response as? HTTPURLResponse)?.statusCode))
-                return
-            }
             
-            guard let transformationResponse = try? JSONDecoder().decode([Transformation].self, from: data) else {
-                completion([], NetworkError.decoding)
-                return
-            }
-            
-            //Paso el token
-            completion(transformationResponse, nil)
-        }
-        task.resume()
-    }
-    
     
     //MARK: GET LOCALIZATIONS
-    func getLocalizacionHeroes(id: String, completion: @escaping ([HeroCoordenates], NetworkError?) -> Void) {
+    func getLocalizacionHeroes(id: String, completion: @escaping ([HeroCoordenates], Error?) -> Void) {
         guard let url = URL(string: "https://vapor2022.herokuapp.com/api/heros/locations"),
               let token = self.token else {
             completion([], NetworkError.malformedURL)
@@ -227,10 +176,8 @@ class NetworkModel {
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "POST"
         urlRequest.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-        urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
         urlRequest.httpBody = urlComponents.query?.data(using: .utf8)
         
-        //MARK: Creamos el DATATASK que usa este REQUEST
         let task = URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
             guard error == nil else {
                 completion([], NetworkError.unknown)
@@ -239,14 +186,6 @@ class NetworkModel {
             
             guard let data = data else {
                 completion([], NetworkError.noData)
-                return
-            }
-            
-            //Miramos e tipo de respuesta recibido
-            guard let httpResponse = (response as? HTTPURLResponse),
-                  httpResponse.statusCode == 200
-            else {
-                completion([], NetworkError.errorCode(code: (response as? HTTPURLResponse)?.statusCode))
                 return
             }
             
@@ -261,9 +200,56 @@ class NetworkModel {
     }
 }
 
-
-extension NetworkModel {
+//MARK: - EXTENSION -
+private extension NetworkModel {
+    func performAuthenticationNetworkRequest<R: Decodable, B: Encodable>(
+        _ urlString: String,
+        httpMethod: HTTPMethod,
+        httpBody: B?,
+        requestToken: String,
+        completion: @escaping(Result<R, NetworkError>) -> Void
+    ) {
+        guard let url = URL(string: urlString) else {
+            completion(.failure(.malformedURL))
+            return
+        }
+        
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = httpMethod.rawValue
+        urlRequest.setValue("Beares \(requestToken)", forHTTPHeaderField: "Authorization")
+        
+        if let httpBody {
+            urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            urlRequest.httpBody = try? JSONEncoder().encode(httpBody)
+        }
+        
+        //MARK: Creamos el DATATASK que usa este REQUEST
+        let task = URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
+            guard error == nil else {
+                completion(.failure(.other))
+                return
+            }
+            
+            guard let data = data else {
+                completion(.failure(.noData))
     
+                return
+            }
+                        
+            guard let response = try? JSONDecoder().decode(R.self, from: data) else {
+                completion(.failure(.decoding))
+    
+                return
+            }
+            completion(.success(response))
+            
+        }
+        
+        task.resume()
+        
+        
+        
+    }
 }
 
 

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "E38B0384-A412-4816-BEBD-746DB0F2A3A5"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2EF1542B-DAFF-4937-8D7B-AB352E413B5E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DragonBallApp/ViewControllers/HomeTableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "2EF1542B-DAFF-4937-8D7B-AB352E413B5E - a3dc4bbf8700e4eb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DragonBallApp.HomeTableViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "DragonBallApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aitor/Documents/0-REPOSITORIO%20GIT%20AITOR/AvanzadoIOS/DragonBallApp/DragonBallApp/ViewControllers/HomeTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "818">
+               </Location>
+               <Location
+                  uuid = "2EF1542B-DAFF-4937-8D7B-AB352E413B5E - 1c2338ee988a9120"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Array&lt;DragonBallApp.Hero&gt;, Swift.Optional&lt;DragonBallApp.NetworkError&gt;) -&gt; () in DragonBallApp.HomeTableViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "DragonBallApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aitor/Documents/0-REPOSITORIO%20GIT%20AITOR/AvanzadoIOS/DragonBallApp/DragonBallApp/ViewControllers/HomeTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "284">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B1463897-A1ED-4A46-B1CF-CD518F786646"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DragonBallApp/ViewControllers/HomeTableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

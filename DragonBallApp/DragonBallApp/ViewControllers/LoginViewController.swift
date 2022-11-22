@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import KeychainSwift
 
 class LoginViewController: UIViewController {
 
@@ -61,7 +62,7 @@ class LoginViewController: UIViewController {
                     DispatchQueue.main.async {
                         self.activityIndicator.stopAnimating()
                         self.view.isUserInteractionEnabled = true
-                        let nextVC = HomeViewController()
+                        let nextVC = HomeTableViewController()
                         self.navigationController?.setViewControllers([nextVC], animated: true)
                     }
                 }

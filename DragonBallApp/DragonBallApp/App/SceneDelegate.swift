@@ -26,7 +26,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let keychain = KeychainSwift()
         var nextVC : UIViewController = UIViewController()
         if keychain.get("KCToken") != nil {
-            nextVC = HomeViewController()
+            nextVC = HomeTableViewController()
         }else {
             nextVC = LoginViewController()
         }

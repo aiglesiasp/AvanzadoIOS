@@ -92,7 +92,7 @@ final class NetworkModelTest: XCTestCase {
         }
         //THEN -
         //XCTAssertEqual(retrievedToken, "TokenString",  "should have received a token")
-        XCTAssertEqual(error, .errorCode(nil))
+        XCTAssertEqual(error, .errorCode(code: nil))
     }
     
     //MARK: - TEST LOGIN WITH ERROR CODE
@@ -108,27 +108,9 @@ final class NetworkModelTest: XCTestCase {
         }
         //THEN -
         //XCTAssertEqual(retrievedToken, "TokenString",  "should have received a token")
-        XCTAssertEqual(error, .errorCode(404))
+        XCTAssertEqual(error, .errorCode(code: 404))
     }
     
-    
-    
-    
-    //TODO: MARK: - TEST LOGIN WITH ERROR TOKEN .
-    /*func testLoginFailWithTokenFormatError() {
-        var error: NetworkError?
-        
-        //GIVEN - Creamos variables
-        urlSessionMock.data = Data([0x00])
-        urlSessionMock.response = HTTPURLResponse(url: URL(string: "http")!, statusCode: 200, httpVersion: nil, headerFields: nil)
-        //WHEN - Llamamos al LOGIN
-        sut.login(user: "", password: "") { _ , networkError in
-            error = networkError
-        }
-        //THEN -
-        //XCTAssertEqual(retrievedToken, "TokenString",  "should have received a token")
-        XCTAssertEqual(error, .tokenFormatError)
-    }*/
     
     
     //-------------------------------------------------------------//
@@ -236,7 +218,7 @@ final class NetworkModelTest: XCTestCase {
         }
         //THEN -
         //XCTAssertEqual(retrievedToken, "TokenString",  "should have received a token")
-        XCTAssertEqual(error, .errorCode(nil))
+        XCTAssertEqual(error, .errorCode(code: nil))
     }
     
     //MARK: - TEST GET HEROES WITH ERROR CODE
@@ -253,134 +235,7 @@ final class NetworkModelTest: XCTestCase {
         }
         //THEN -
         //XCTAssertEqual(retrievedToken, "TokenString",  "should have received a token")
-        XCTAssertEqual(error, .errorCode(404))
-    }
-    
-    
-    
-    //-------------------------------------------------------------//
-    // MARK: TEST PARA EL GET TRANSFORMATIONS
-    //-------------------------------------------------------------//
-    //MARK: - FUNCION TEST GET TRANSFORMATION OKEY -
-    func testGetTransformationSuccess() {
-        var retrievedTransformation: [Transformation]?
-        var error: NetworkError?
-        //GIVEN - Creamos variables
-        sut.token = "testToken"
-        urlSessionMock.data = getTransformationData(resourceName: "transformation")
-        urlSessionMock.response = HTTPURLResponse(url: URL(string: "http")!, statusCode: 200, httpVersion: nil, headerFields: nil)
-        //When
-        sut.getTransformation (id: "") { transformations, networkError in
-            error = networkError
-            retrievedTransformation = transformations
-        }
-        //THEN
-        XCTAssertNotNil(urlSessionMock.data)
-        XCTAssertNil(error, "there should be no error")
-        XCTAssertTrue((retrievedTransformation?.count ?? 0) > 0 , "There should be transformations")
-        XCTAssertEqual(retrievedTransformation?.first?.id, "Transformation ID", "should be the same transformation as in the json file")
-    }
-    
-    //MARK: - FUNCION TEST GET TRANSFORMATION OKEY SIN TRANSFORMACIONES-
-    func testGetTransformationSuccessWithNoTransformations() {
-        var retrievedTransformation: [Transformation]?
-        var error: NetworkError?
-        //GIVEN - Creamos variables
-        sut.token = "testToken"
-        urlSessionMock.data = getTransformationData(resourceName: "noTransformation")
-        urlSessionMock.response = HTTPURLResponse(url: URL(string: "http")!, statusCode: 200, httpVersion: nil, headerFields: nil)
-        //When
-        sut.getTransformation(id: "") { transformations, networkError in
-            error = networkError
-            retrievedTransformation = transformations
-        }
-        //THEN
-        XCTAssertNotNil(urlSessionMock.data)
-        XCTAssertNil(error, "there should be no error")
-        XCTAssertNotNil(retrievedTransformation)
-        XCTAssertEqual(retrievedTransformation?.count, 0)
-    }
-    
-    
-    //MARK: - TEST GET TRANSFORMATION WITH NO DATA -
-    func testGetTransformationsFailWithNoData() {
-        var error: NetworkError?
-        //GIVEN - Creamos variables
-        urlSessionMock.data = nil
-        //WHEN - Llamamos al LOGIN
-        sut.token = "testToken"
-        sut.getTransformation(id: "") { _ , networkError in
-            error = networkError
-        }
-        //THEN -
-        XCTAssertEqual(error, .noData)
-    }
-    
-    //MARK: - TEST GET TRANSFORMATION WITH ERROR -
-    func testGetTransformationFailWithError() {
-        var error: NetworkError?
-        //GIVEN - Creamos variables
-        urlSessionMock.data = nil
-        urlSessionMock.error = errorMock.mockCase
-        //WHEN - Llamamos al LOGIN
-        sut.token = "testToken"
-        sut.getTransformation(id: "") { _, networkError in
-            error = networkError
-        }
-        //THEN -
-        XCTAssertEqual(error, .other)
-    }
-    
-    //MARK: - TEST GET TRANSFORMATION WITH TOKEN NIL
-    func testGetTransformationFailWithTokenNil() {
-        var error: NetworkError?
-        
-        //GIVEN - Creamos variables
-        urlSessionMock.data = "TokenString".data(using: .utf8)
-        urlSessionMock.response = nil
-        //WHEN - Llamamos al LOGIN
-        sut.token = nil
-        sut.getTransformation(id: "") { _, networkError in
-            error = networkError
-        }
-        //THEN -
-        //XCTAssertEqual(retrievedToken, "TokenString",  "should have received a token")
-        XCTAssertEqual(error, .tokenFormatError)
-    }
-
-    
-    //MARK: - TEST GET TRANSFORMATION WITH ERROR CODE NIL
-    func testGetTransformationFailWithErrorCodeNil() {
-        var error: NetworkError?
-        
-        //GIVEN - Creamos variables
-        urlSessionMock.data = "TokenString".data(using: .utf8)
-        urlSessionMock.response = nil
-        //WHEN - Llamamos al LOGIN
-        sut.token = "testToken"
-        sut.getTransformation(id: "") { _, networkError in
-            error = networkError
-        }
-        //THEN -
-        //XCTAssertEqual(retrievedToken, "TokenString",  "should have received a token")
-        XCTAssertEqual(error, .errorCode(nil))
-    }
-    
-    //MARK: - TEST GET TRANSFORMATION WITH ERROR CODE
-    func testGetTransformationFailWithErrorCode() {
-        var error: NetworkError?
-        
-        //GIVEN - Creamos variables
-        urlSessionMock.data = "TokenString".data(using: .utf8)
-        urlSessionMock.response = HTTPURLResponse(url: URL(string: "http")!, statusCode: 404, httpVersion: nil, headerFields: nil)
-        //WHEN - Llamamos al LOGIN
-        sut.token = "testToken"
-        sut.getTransformation(id: "") { _ , networkError in
-            error = networkError
-        }
-        //THEN -
-        //XCTAssertEqual(retrievedToken, "TokenString",  "should have received a token")
-        XCTAssertEqual(error, .errorCode(404))
+        XCTAssertEqual(error, .errorCode(code: 404))
     }
 }
 
@@ -400,17 +255,6 @@ extension NetworkModelTest {
         
         return try? Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
         
-    }
-    
-    func getTransformationData (resourceName: String) -> Data? {
-        let bundle = Bundle(for: NetworkModelTest.self)
-        
-        guard let path = bundle.path(forResource: resourceName, ofType: "json") else {
-            return nil
-            
-        }
-        
-        return try? Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
     }
 }
 
