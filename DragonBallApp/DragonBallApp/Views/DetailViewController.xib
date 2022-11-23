@@ -44,13 +44,26 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="osc-Uy-ZAc">
+                    <rect key="frame" x="120" y="725" width="150" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="150" id="y3D-Eb-zQk"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="filled" title="LOCATIONS"/>
+                    <connections>
+                        <action selector="onTapButtonLocations:" destination="-1" eventType="touchUpInside" id="Tdc-Y7-owp"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="Ca6-IW-Lh2" firstAttribute="top" secondItem="8RT-BK-Iea" secondAttribute="bottom" constant="8" id="Hbi-Eq-XDv"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="qpy-AI-yHY" secondAttribute="trailing" constant="8" id="Qmr-fK-DRF"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="osc-Uy-ZAc" secondAttribute="bottom" constant="50" id="WSF-4N-td7"/>
                 <constraint firstItem="qpy-AI-yHY" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="Xq1-g9-rpq"/>
+                <constraint firstItem="osc-Uy-ZAc" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="b9E-xI-Wpc"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="8RT-BK-Iea" secondAttribute="trailing" id="cKG-sN-1L9"/>
                 <constraint firstItem="Ca6-IW-Lh2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="dE5-Mj-4gO"/>
                 <constraint firstItem="8RT-BK-Iea" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="hVE-XE-szj"/>
