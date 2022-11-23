@@ -12,6 +12,7 @@ final class HomeTableViewModel {
     
     private var networkModel: NetworkModel
     private var keychain: KeychainSwift
+    private var coreDataManager:  CoreDataManager
     
     //DECLARAMOS UN ARRAY DE HEROES
     private(set)var heroesArray: [Hero] = []
@@ -23,31 +24,56 @@ final class HomeTableViewModel {
     //init
     init(networkModel: NetworkModel = NetworkModel(),
          keychain: KeychainSwift = KeychainSwift(),
+         coreDataManager: CoreDataManager = .shared,
          onError: ((String) -> Void)? = nil,
          onSuccess: (() -> Void)? = nil)
     {
         self.networkModel = networkModel
         self.keychain = keychain
+        self.coreDataManager = coreDataManager
         self.onError = onError
         self.onSuccess = onSuccess
     }
     
     //llamada a red
     func viewDidLoad() {
-        //MARK: CONSEGUIMOS EL TOKEN
-        guard let token = keychain.get("KCToken") else {return}
-        networkModel.token = token
         
-        networkModel.getHeroes { [weak self] heroes, error in
-            if let error = error {
-                self?.onError?(error.localizedDescription)
-            }
-            self?.heroesArray = heroes
-            self?.onSuccess?()
-            
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            self?.loadHeroes()
         }
     }
     
-    
-    
+    func loadHeroes() {
+        //MARK: Compruebo si tengo datos en la CoreData
+        let cdHeros = coreDataManager.fetchHeros()
+        guard !cdHeros.isEmpty else {
+            print("Heroes Network Call")
+            //MARK: CONSEGUIMOS EL TOKEN
+            guard let token = keychain.get("KCToken") else {return}
+            networkModel.token = token
+            //MARK: LLAMADA A LA RED
+            networkModel.getHeroes { [weak self] heroes, error in
+                if let error = error {
+                    self?.onError?(error.localizedDescription)
+                }
+                self?.heroesArray = heroes
+                self?.onSuccess?()
+                self?.save(heroes: heroes)
+                
+            }
+            return
+        }
+        
+        //MARK: Muestro los del coredata
+        print("Heroes from Core Data")
+        heroesArray = cdHeros.map{ $0.hero }
+        onSuccess?()
+    }
+}
+
+private extension HomeTableViewModel {
+    func save(heroes: [Hero]) {
+        _ = heroes.map{ CDHero.create(from: $0, context: coreDataManager.context) }
+        coreDataManager.saveContext()
+    }
 }
