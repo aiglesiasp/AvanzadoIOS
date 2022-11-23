@@ -44,9 +44,13 @@ final class HomeTableViewModel {
     }
     
     func loadHeroes() {
-        //MARK: Compruebo si tengo datos en la CoreData
         let cdHeros = coreDataManager.fetchHeros()
-        guard !cdHeros.isEmpty else {
+        
+        //Hacer llamadas cada X tiempo
+        guard let date = LocalDataModel.getSyncDate(),
+              date.addingTimeInterval(84600) > Date(),
+              !cdHeros.isEmpty else {
+            
             print("Heroes Network Call")
             //MARK: CONSEGUIMOS EL TOKEN
             guard let token = keychain.get("KCToken") else {return}
@@ -58,6 +62,7 @@ final class HomeTableViewModel {
                 }
                 self?.heroesArray = heroes
                 self?.onSuccess?()
+                LocalDataModel.saveSyncDate()
                 self?.save(heroes: heroes)
                 
             }
