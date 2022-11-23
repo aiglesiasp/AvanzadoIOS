@@ -9,6 +9,7 @@ import Foundation
 
 struct HeroCoordenates: Decodable {
     let id: String
-    let latitud: Double
-    let longitud: Double
+    let latitud: String
+    let longitud: String
+    let dateShow: String
 }

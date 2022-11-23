@@ -54,6 +54,22 @@ final class CoreDataManager {
         }
         return []
     }
+    
+    //MARK: - Obtener Localizaciones
+    func fetchLocations(for heroId: String) -> [CDLocations] {
+        let request = CDLocations.createFetchRequest()
+        let predicate = NSPredicate(format: "hero.id == %@", heroId)
+        request.predicate = predicate
+        
+        do {
+            let result = try context.fetch(request)
+            return result
+        }catch {
+            print("error getting locations")
+        }
+        return []
+    }
+    
 }
 
 

@@ -6,6 +6,22 @@
         <attribute name="id" attributeType="String"/>
         <attribute name="name" attributeType="String"/>
         <attribute name="photoUrl" attributeType="URI"/>
+        <relationship name="locations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CDLocations" inverseName="hero" inverseEntity="CDLocations"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="id"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="CDLocations" representedClassName="CDLocations" syncable="YES">
+        <attribute name="dateShow" attributeType="String"/>
+        <attribute name="id" attributeType="String"/>
+        <attribute name="latitud" attributeType="String"/>
+        <attribute name="longitud" attributeType="String"/>
+        <relationship name="hero" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDHero" inverseName="locations" inverseEntity="CDHero"/>
+        <fetchIndex name="byPropertyIndex">
+            <fetchIndexElement property="hero" type="Binary" order="ascending"/>
+        </fetchIndex>
         <uniquenessConstraints>
             <uniquenessConstraint>
                 <constraint value="id"/>

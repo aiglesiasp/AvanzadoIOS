@@ -38,10 +38,4 @@ extension CDHero {
              photo: self.photoUrl,
              favorite: self.favorite)
     }
-    
-    
-    
-    
-    
-    
 }

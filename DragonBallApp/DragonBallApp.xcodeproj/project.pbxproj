@@ -41,6 +41,8 @@
 		5B9D21B4292D575F0056A8FF /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9D21B3292D575F0056A8FF /* CoreDataManager.swift */; };
 		5B9D21B6292E63E80056A8FF /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9D21B5292E63E80056A8FF /* LoginViewModel.swift */; };
 		5B9D21B8292E64AB0056A8FF /* LocalDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9D21B7292E64AB0056A8FF /* LocalDataModel.swift */; };
+		5B9D21BD292E6DA90056A8FF /* CDLocations+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9D21BA292E6DA90056A8FF /* CDLocations+CoreDataClass.swift */; };
+		5B9D21BE292E6DA90056A8FF /* CDLocations+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9D21BB292E6DA90056A8FF /* CDLocations+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +92,8 @@
 		5B9D21B3292D575F0056A8FF /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		5B9D21B5292E63E80056A8FF /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		5B9D21B7292E64AB0056A8FF /* LocalDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataModel.swift; sourceTree = "<group>"; };
+		5B9D21BA292E6DA90056A8FF /* CDLocations+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDLocations+CoreDataClass.swift"; sourceTree = "<group>"; };
+		5B9D21BB292E6DA90056A8FF /* CDLocations+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDLocations+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +188,8 @@
 			children = (
 				5B9D21AF292D52680056A8FF /* CDHero+CoreDataClass.swift */,
 				5B9D21B0292D52680056A8FF /* CDHero+CoreDataProperties.swift */,
+				5B9D21BA292E6DA90056A8FF /* CDLocations+CoreDataClass.swift */,
+				5B9D21BB292E6DA90056A8FF /* CDLocations+CoreDataProperties.swift */,
 				5B3ED421292C02AF0026B419 /* NetworkModel.swift */,
 				5B9D21B3292D575F0056A8FF /* CoreDataManager.swift */,
 			);
@@ -371,10 +377,12 @@
 				5B14A292292C588300934566 /* HomeTableViewController.swift in Sources */,
 				5B15C273292B9EE800058878 /* SceneDelegate.swift in Sources */,
 				5B9D21B8292E64AB0056A8FF /* LocalDataModel.swift in Sources */,
+				5B9D21BD292E6DA90056A8FF /* CDLocations+CoreDataClass.swift in Sources */,
 				5B3ED422292C02AF0026B419 /* NetworkModel.swift in Sources */,
 				5B765808292D06F100CE6614 /* DetailViewController.swift in Sources */,
 				5B14A28D292C558200934566 /* UIImageViewExtension.swift in Sources */,
 				5B9D21B2292D52680056A8FF /* CDHero+CoreDataProperties.swift in Sources */,
+				5B9D21BE292E6DA90056A8FF /* CDLocations+CoreDataProperties.swift in Sources */,
 				5B9D21B6292E63E80056A8FF /* LoginViewModel.swift in Sources */,
 				5B3ED41F292C024D0026B419 /* MapViewController.swift in Sources */,
 			);
