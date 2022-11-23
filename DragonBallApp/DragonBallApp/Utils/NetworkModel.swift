@@ -158,35 +158,49 @@ class NetworkModel {
             
     
     //MARK: GET LOCALIZATIONS
-    func getLocalizacionHeroes(id: String, completion: @escaping ([HeroCoordenates], Error?) -> Void) {
-        guard let url = URL(string: "https://dragonball.keepcoding.education/api/heros/locations"),
-              let token = self.token else {
+    func getLocalizacionHeroes(id: String, completion: @escaping ([HeroCoordenates], NetworkError?) -> Void) {
+        guard let url = URL(string: "https://dragonball.keepcoding.education/api/heros/locations")
+        else {
             completion([], NetworkError.malformedURL)
             return
         }
+        //CHEQUEO TOKEN
+        guard let token = self.token else {
+            completion([], NetworkError.other)
+            return
+        }
+        
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "POST"
+        urlRequest.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
         //Creo el BODY
         struct Body: Encodable {
             let id: String
         }
         let body = Body(id: id)
-        //var urlComponents = URLComponents()
-        //urlComponents.queryItems = [URLQueryItem(name: "id", value: id)]
         
-        var urlRequest = URLRequest(url: url)
-        urlRequest.httpMethod = "POST"
-        urlRequest.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         urlRequest.httpBody = try? JSONEncoder().encode(body)
-        //urlRequest.httpBody = urlComponents.query?.data(using: .utf8)
+   
         
-        let task = URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
-            guard error == nil else {
+        let task = session.dataTask(with: urlRequest) { (data, response, error) in
+            guard error == nil
+            else {
                 completion([], NetworkError.unknown)
                 return
             }
             
-            guard let data = data else {
+            guard let data = data
+            else {
                 completion([], NetworkError.noData)
+                return
+            }
+            //Miramos e tipo de respuesta recibido
+            guard let httpResponse = (response as? HTTPURLResponse),
+                  httpResponse.statusCode == 200
+            else {
+                completion([], NetworkError.errorCode(code: (response as? HTTPURLResponse)?.statusCode))
                 return
             }
             
@@ -196,7 +210,6 @@ class NetworkModel {
             }
             completion(response, nil)
         }
-        
         task.resume()
     }
 }

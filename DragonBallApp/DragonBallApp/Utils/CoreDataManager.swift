@@ -55,6 +55,22 @@ final class CoreDataManager {
         return []
     }
     
+    //MARK: -Obtener un solo heroe
+    func fetchHeros(id heroId: String) -> CDHero? {
+        let request = CDHero.createFetchRequest()
+        let predicate = NSPredicate(format: "id==%@", heroId)
+        request.predicate = predicate
+        request.fetchBatchSize = 1
+        
+        do {
+            let result = try context.fetch(request)
+            return result.first
+        }catch {
+            print("error getting heroes")
+        }
+        return nil
+    }
+    
     //MARK: - Obtener Localizaciones
     func fetchLocations(for heroId: String) -> [CDLocations] {
         let request = CDLocations.createFetchRequest()

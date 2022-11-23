@@ -48,7 +48,7 @@ final class HomeTableViewModel {
         
         //Hacer llamadas cada X tiempo
         guard let date = LocalDataModel.getSyncDate(),
-              date.addingTimeInterval(84600) > Date(),
+              date.addingTimeInterval(1000) > Date(),
               !cdHeros.isEmpty else {
             
             print("Heroes Network Call")
@@ -57,14 +57,29 @@ final class HomeTableViewModel {
             networkModel.token = token
             //MARK: LLAMADA A LA RED
             networkModel.getHeroes { [weak self] heroes, error in
-                if let error = error {
-                    self?.onError?(error.localizedDescription)
-                }
-                self?.heroesArray = heroes
-                self?.onSuccess?()
-                LocalDataModel.saveSyncDate()
-                self?.save(heroes: heroes)
                 
+                if let error = error {
+                    self?.onError?("Heroes \(error.localizedDescription)")
+                } else {
+                    self?.save(heroes: heroes)
+                    
+                    let group = DispatchGroup()
+                    
+                    heroes.forEach { hero in
+                        group.enter()
+                        self?.donwloadLocations(for: hero) {
+                            group.leave()
+                        }
+                    }
+                    
+                    group.notify(queue: DispatchQueue.global()) {
+                        LocalDataModel.saveSyncDate()
+                        if let cdHeroes = self?.coreDataManager.fetchHeros() {
+                            self?.heroesArray = cdHeroes.map {$0.hero}
+                        }
+                        self?.onSuccess?()
+                    }
+                }
             }
             return
         }
@@ -74,11 +89,42 @@ final class HomeTableViewModel {
         heroesArray = cdHeros.map{ $0.hero }
         onSuccess?()
     }
+    
+    //MARK: - Funcion descargar localizaciones
+    func donwloadLocations(for hero: Hero, completion: @escaping() -> Void) {
+        let cdLocations = coreDataManager.fetchLocations(for: hero.id)
+        if cdLocations.isEmpty {
+            print("Locations Network Call")
+            guard let token = keychain.get("KCToken") else {
+                completion()
+                return
+            }
+            networkModel.token = token
+            networkModel.getLocalizacionHeroes(id: hero.id)
+            { [weak self] locations, error in
+                if let error = error {
+                    self?.onError?("Error: \(error.localizedDescription)")
+                } else {
+                    self?.save(locations: locations, for: hero)
+                    self?.onSuccess?()
+                }
+                completion()
+            }
+        }else {
+            completion()
+        }
+    }
 }
 
 private extension HomeTableViewModel {
     func save(heroes: [Hero]) {
-        _ = heroes.map{ CDHero.create(from: $0, context: coreDataManager.context) }
+        _ = heroes.map { CDHero.create(from: $0, context: coreDataManager.context) }
+        coreDataManager.saveContext()
+    }
+    
+    func save(locations: [HeroCoordenates], for hero: Hero) {
+        guard let cdHero = coreDataManager.fetchHeros(id: hero.id) else {return}
+        _ = locations.map{ CDLocations.create(from: $0, for: cdHero, context: coreDataManager.context) }
         coreDataManager.saveContext()
     }
 }
