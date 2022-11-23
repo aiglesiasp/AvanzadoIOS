@@ -58,8 +58,12 @@ final class CoreDataManager {
     //MARK: - Obtener Localizaciones
     func fetchLocations(for heroId: String) -> [CDLocations] {
         let request = CDLocations.createFetchRequest()
+        //Predicado para guardar los que coinciden con la ID que le pasamos
         let predicate = NSPredicate(format: "hero.id == %@", heroId)
         request.predicate = predicate
+        //Tambien ordenalo por fecha
+        let sort = NSSortDescriptor(key: "dateShow", ascending: false, selector: #selector(NSString.localizedStandardCompare))
+        request.sortDescriptors = [sort]
         
         do {
             let result = try context.fetch(request)
@@ -69,7 +73,6 @@ final class CoreDataManager {
         }
         return []
     }
-    
 }
 
 
