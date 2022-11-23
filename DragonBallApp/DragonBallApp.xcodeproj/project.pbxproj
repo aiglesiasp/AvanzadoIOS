@@ -28,8 +28,8 @@
 		5B3ED436292C11490026B419 /* URLSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3ED435292C11490026B419 /* URLSessionMock.swift */; };
 		5B3ED438292C12140026B419 /* heroes.json in Resources */ = {isa = PBXBuildFile; fileRef = 5B3ED437292C12140026B419 /* heroes.json */; };
 		5B3ED43A292C121C0026B419 /* noHeroes.json in Resources */ = {isa = PBXBuildFile; fileRef = 5B3ED439292C121B0026B419 /* noHeroes.json */; };
-		5B3ED43C292C12240026B419 /* transformation.json in Resources */ = {isa = PBXBuildFile; fileRef = 5B3ED43B292C12240026B419 /* transformation.json */; };
-		5B3ED43E292C122A0026B419 /* noTransformation.json in Resources */ = {isa = PBXBuildFile; fileRef = 5B3ED43D292C122A0026B419 /* noTransformation.json */; };
+		5B3ED43C292C12240026B419 /* location.json in Resources */ = {isa = PBXBuildFile; fileRef = 5B3ED43B292C12240026B419 /* location.json */; };
+		5B3ED43E292C122A0026B419 /* noLocation.json in Resources */ = {isa = PBXBuildFile; fileRef = 5B3ED43D292C122A0026B419 /* noLocation.json */; };
 		5B765808292D06F100CE6614 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B765806292D06F100CE6614 /* DetailViewController.swift */; };
 		5B765809292D06F100CE6614 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B765807292D06F100CE6614 /* DetailViewController.xib */; };
 		5B9D21A8292D148D0056A8FF /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5B9D21A7292D148D0056A8FF /* KeychainSwift */; };
@@ -82,8 +82,8 @@
 		5B3ED435292C11490026B419 /* URLSessionMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionMock.swift; sourceTree = "<group>"; };
 		5B3ED437292C12140026B419 /* heroes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = heroes.json; sourceTree = "<group>"; };
 		5B3ED439292C121B0026B419 /* noHeroes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = noHeroes.json; sourceTree = "<group>"; };
-		5B3ED43B292C12240026B419 /* transformation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = transformation.json; sourceTree = "<group>"; };
-		5B3ED43D292C122A0026B419 /* noTransformation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = noTransformation.json; sourceTree = "<group>"; };
+		5B3ED43B292C12240026B419 /* location.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = location.json; sourceTree = "<group>"; };
+		5B3ED43D292C122A0026B419 /* noLocation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = noLocation.json; sourceTree = "<group>"; };
 		5B765806292D06F100CE6614 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		5B765807292D06F100CE6614 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		5B9D21AB292D23AC0056A8FF /* HomeTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewModel.swift; sourceTree = "<group>"; };
@@ -182,8 +182,8 @@
 				5B3ED435292C11490026B419 /* URLSessionMock.swift */,
 				5B3ED437292C12140026B419 /* heroes.json */,
 				5B3ED439292C121B0026B419 /* noHeroes.json */,
-				5B3ED43B292C12240026B419 /* transformation.json */,
-				5B3ED43D292C122A0026B419 /* noTransformation.json */,
+				5B3ED43B292C12240026B419 /* location.json */,
+				5B3ED43D292C122A0026B419 /* noLocation.json */,
 			);
 			path = DragonBallAppTests;
 			sourceTree = "<group>";
@@ -356,9 +356,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B3ED43A292C121C0026B419 /* noHeroes.json in Resources */,
-				5B3ED43E292C122A0026B419 /* noTransformation.json in Resources */,
+				5B3ED43E292C122A0026B419 /* noLocation.json in Resources */,
 				5B3ED438292C12140026B419 /* heroes.json in Resources */,
-				5B3ED43C292C12240026B419 /* transformation.json in Resources */,
+				5B3ED43C292C12240026B419 /* location.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

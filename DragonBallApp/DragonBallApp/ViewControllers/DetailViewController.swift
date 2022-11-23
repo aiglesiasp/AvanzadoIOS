@@ -39,6 +39,8 @@ class DetailViewController: UIViewController {
     //MARK: BOTON POSICIONES
     @IBAction func onTapButtonLocations(_ sender: Any) {
         let nextVC = MapViewController()
+        guard let hero = hero else {return}
+        nextVC.set(model: hero)
         navigationController?.pushViewController(nextVC, animated: true)
     }
     

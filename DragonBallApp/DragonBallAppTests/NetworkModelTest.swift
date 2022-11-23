@@ -237,6 +237,134 @@ final class NetworkModelTest: XCTestCase {
         //XCTAssertEqual(retrievedToken, "TokenString",  "should have received a token")
         XCTAssertEqual(error, .errorCode(code: 404))
     }
+
+
+
+//-------------------------------------------------------------//
+// MARK: TEST PARA EL GET LOCATIONS
+//-------------------------------------------------------------//
+//MARK: - FUNCION TEST GET LOCATION OKEY -
+func testGetLocationSuccess() {
+    var retrievedLocation: [HeroCoordenates]?
+    var error: NetworkError?
+    //GIVEN - Creamos variables
+    
+    sut.token = "testToken"
+    urlSessionMock.data = getLocationsData(id: "location")
+    urlSessionMock.response = HTTPURLResponse(url: URL(string: "http")!, statusCode: 200, httpVersion: nil, headerFields: nil)
+    //When
+    sut.getLocalizacionHeroes (id: "") { locations, networkError in
+        error = networkError
+        retrievedLocation = locations
+    }
+    //THEN
+    XCTAssertNotNil(urlSessionMock.data)
+    XCTAssertNil(error, "there should be no error")
+    XCTAssertTrue((retrievedLocation?.count ?? 0) > 0 , "There should be transformations")
+    XCTAssertEqual(retrievedLocation?.first?.id, "7B784A32-1A81-4B0E-956D-45A7648696C1", "should be the same location as in the json file")
+}
+
+//MARK: - FUNCION TEST GET LOCATION OKEY SIN LOCALIZACIONES-
+func testGetLocationsSuccessWithNoLocation() {
+    var retrievedLocation: [HeroCoordenates]?
+    var error: NetworkError?
+    //GIVEN - Creamos variables
+    sut.token = "testToken"
+    urlSessionMock.data = getLocationsData(id: "noLocation")
+    urlSessionMock.response = HTTPURLResponse(url: URL(string: "http")!, statusCode: 200, httpVersion: nil, headerFields: nil)
+    //When
+    sut.getLocalizacionHeroes (id: "") { locations, networkError in
+        error = networkError
+        retrievedLocation = locations
+    }
+    //THEN
+    XCTAssertNotNil(urlSessionMock.data)
+    XCTAssertNil(error, "there should be no error")
+    XCTAssertNotNil(retrievedLocation)
+    XCTAssertEqual(retrievedLocation?.count, 0)
+}
+
+
+//MARK: - TEST GET LOCATION WITH NO DATA -
+func testGetLocationFailWithNoData() {
+    var error: NetworkError?
+    //GIVEN - Creamos variables
+    urlSessionMock.data = nil
+    //WHEN - Llamamos al LOGIN
+    sut.token = "testToken"
+    sut.getLocalizacionHeroes(id: "") { _ , networkError in
+        error = networkError
+    }
+    //THEN -
+    XCTAssertEqual(error, .noData)
+}
+
+//MARK: - TEST GET LOCATION WITH ERROR -
+func testGetLocationFailWithError() {
+    var error: NetworkError?
+    //GIVEN - Creamos variables
+    urlSessionMock.data = nil
+    urlSessionMock.error = errorMock.mockCase
+    //WHEN - Llamamos al LOGIN
+    sut.token = "testToken"
+    sut.getLocalizacionHeroes(id: "") { _, networkError in
+        error = networkError
+    }
+    //THEN -
+    XCTAssertEqual(error, .other)
+}
+
+//MARK: - TEST GET LOCATION WITH TOKEN NIL
+func testGetLocationFailWithTokenNil() {
+    var error: NetworkError?
+    
+    //GIVEN - Creamos variables
+    urlSessionMock.data = "TokenString".data(using: .utf8)
+    urlSessionMock.response = nil
+    //WHEN - Llamamos al LOGIN
+    sut.token = nil
+    sut.getLocalizacionHeroes(id: "") { _, networkError in
+        error = networkError
+    }
+    //THEN -
+    //XCTAssertEqual(retrievedToken, "TokenString",  "should have received a token")
+    XCTAssertEqual(error, .tokenFormatError)
+}
+
+
+//MARK: - TEST GET LOCATION WITH ERROR CODE NIL
+func testGetLocationFailWithErrorCodeNil() {
+    var error: NetworkError?
+    
+    //GIVEN - Creamos variables
+    urlSessionMock.data = "TokenString".data(using: .utf8)
+    urlSessionMock.response = nil
+    //WHEN - Llamamos al LOGIN
+    sut.token = "testToken"
+    sut.getLocalizacionHeroes(id: "") { _, networkError in
+        error = networkError
+    }
+    //THEN -
+    //XCTAssertEqual(retrievedToken, "TokenString",  "should have received a token")
+    XCTAssertEqual(error, .errorCode(code: nil))
+}
+
+//MARK: - TEST GET LOCATION WITH ERROR CODE
+func testGetLocationFailWithErrorCode() {
+    var error: NetworkError?
+    
+    //GIVEN - Creamos variables
+    urlSessionMock.data = "TokenString".data(using: .utf8)
+    urlSessionMock.response = HTTPURLResponse(url: URL(string: "http")!, statusCode: 404, httpVersion: nil, headerFields: nil)
+    //WHEN - Llamamos al LOGIN
+    sut.token = "testToken"
+    sut.getLocalizacionHeroes(id: "") { _ , networkError in
+        error = networkError
+    }
+    //THEN -
+    //XCTAssertEqual(retrievedToken, "TokenString",  "should have received a token")
+    XCTAssertEqual(error, .errorCode(code: 404))
+}
 }
 
 
@@ -252,9 +380,17 @@ extension NetworkModelTest {
             return nil
             
         }
-        
         return try? Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+    }
+    
+    func getLocationsData (id: String) -> Data? {
+        let bundle = Bundle(for: NetworkModelTest.self)
         
+        guard let path = bundle.path(forResource: id, ofType: "json") else {
+            return nil
+            
+        }
+        return try? Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
     }
 }
 

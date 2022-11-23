@@ -166,7 +166,7 @@ class NetworkModel {
         }
         //CHEQUEO TOKEN
         guard let token = self.token else {
-            completion([], NetworkError.other)
+            completion([], NetworkError.tokenFormatError)
             return
         }
         
@@ -187,7 +187,7 @@ class NetworkModel {
         let task = session.dataTask(with: urlRequest) { (data, response, error) in
             guard error == nil
             else {
-                completion([], NetworkError.unknown)
+                completion([], NetworkError.other)
                 return
             }
             

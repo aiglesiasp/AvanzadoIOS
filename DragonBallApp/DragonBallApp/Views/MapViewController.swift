@@ -34,7 +34,13 @@ class MapViewController: UIViewController {
     //MARK: Funcion configurar mapa
     func setupMap() {
         mapView.showsUserLocation = true
-        mapView.centerLocation(location: CLLocation(latitude: 40.43, longitude: -3.70), regionRadius: 10000000)
+        viewModel.getHeroesAnnotations { arrayAnnotations in
+            mapView.addAnnotations([arrayAnnotations])
+        }
+        mapView.centerLocation(location: CLLocation(latitude: mapView.annotations.first?.coordinate.latitude ?? 40.43, longitude: mapView.annotations.first?.coordinate.longitude ?? -3.70), regionRadius: 1000000)
     }
     
+    func set(model: Hero) {
+        viewModel.hero = model
+    }
 }
