@@ -21,14 +21,20 @@ class MapViewController: UIViewController {
     }
 
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel.checkLocationServices()
     }
-    */
-
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        setupMap()
+    }
+    
+    //MARK: Funcion configurar mapa
+    func setupMap() {
+        mapView.showsUserLocation = true
+        mapView.centerLocation(location: CLLocation(latitude: 40.43, longitude: -3.70), regionRadius: 10000000)
+    }
+    
 }

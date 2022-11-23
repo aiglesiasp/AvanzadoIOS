@@ -44,6 +44,7 @@
 		5B9D21C0292E9CEF0056A8FF /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9D21BF292E9CEF0056A8FF /* MapViewModel.swift */; };
 		5B9D21C5292E9EDC0056A8FF /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9D21C3292E9EDC0056A8FF /* MapViewController.swift */; };
 		5B9D21C6292E9EDC0056A8FF /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B9D21C4292E9EDC0056A8FF /* MapViewController.xib */; };
+		5B9D21C8292EA4930056A8FF /* extension+Mapview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9D21C7292EA4930056A8FF /* extension+Mapview.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +97,7 @@
 		5B9D21BF292E9CEF0056A8FF /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		5B9D21C3292E9EDC0056A8FF /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = ../Views/MapViewController.swift; sourceTree = "<group>"; };
 		5B9D21C4292E9EDC0056A8FF /* MapViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
+		5B9D21C7292EA4930056A8FF /* extension+Mapview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "extension+Mapview.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 			children = (
 				5B14A28C292C558200934566 /* UIImageViewExtension.swift */,
 				5B14A28E292C55A900934566 /* UIViewControllerExtension.swift */,
+				5B9D21C7292EA4930056A8FF /* extension+Mapview.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -385,6 +388,7 @@
 				5B9D21BD292E6DA90056A8FF /* CDLocations+CoreDataClass.swift in Sources */,
 				5B3ED422292C02AF0026B419 /* NetworkModel.swift in Sources */,
 				5B765808292D06F100CE6614 /* DetailViewController.swift in Sources */,
+				5B9D21C8292EA4930056A8FF /* extension+Mapview.swift in Sources */,
 				5B14A28D292C558200934566 /* UIImageViewExtension.swift in Sources */,
 				5B9D21B2292D52680056A8FF /* CDHero+CoreDataProperties.swift in Sources */,
 				5B9D21BE292E6DA90056A8FF /* CDLocations+CoreDataProperties.swift in Sources */,

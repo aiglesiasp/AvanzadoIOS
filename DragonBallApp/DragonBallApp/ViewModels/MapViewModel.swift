@@ -12,7 +12,7 @@ final class MapMiewModel {
     
     func checkLocationServices() {
         if CLLocationManager.locationServicesEnabled() {
-            
+            checkLocationAuthorization()
         } else {
             //Errores
         }
@@ -20,6 +20,8 @@ final class MapMiewModel {
     
     private func checkLocationAuthorization() {
         switch CLLocationManager.authorizationStatus() {
+        case .notDetermined:
+           break
         default:
             break
         }
