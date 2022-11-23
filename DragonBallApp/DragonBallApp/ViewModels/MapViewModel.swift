@@ -20,7 +20,7 @@ final class MapMiewModel {
     
     private func checkLocationAuthorization() {
         switch CLLocationManager.authorizationStatus() {
-        @unknown default:
+        default:
             break
         }
     }
