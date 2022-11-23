@@ -20,8 +20,6 @@
 		5B15C280292B9EE900058878 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B15C27E292B9EE900058878 /* LaunchScreen.storyboard */; };
 		5B3ED419292BFB840026B419 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3ED417292BFB840026B419 /* LoginViewController.swift */; };
 		5B3ED41A292BFB840026B419 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B3ED418292BFB840026B419 /* LoginViewController.xib */; };
-		5B3ED41F292C024D0026B419 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3ED41D292C024D0026B419 /* MapViewController.swift */; };
-		5B3ED420292C024D0026B419 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B3ED41E292C024D0026B419 /* MapViewController.xib */; };
 		5B3ED422292C02AF0026B419 /* NetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3ED421292C02AF0026B419 /* NetworkModel.swift */; };
 		5B3ED424292C02E20026B419 /* HeroModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3ED423292C02E20026B419 /* HeroModel.swift */; };
 		5B3ED426292C030D0026B419 /* TransformationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3ED425292C030D0026B419 /* TransformationModel.swift */; };
@@ -43,6 +41,9 @@
 		5B9D21B8292E64AB0056A8FF /* LocalDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9D21B7292E64AB0056A8FF /* LocalDataModel.swift */; };
 		5B9D21BD292E6DA90056A8FF /* CDLocations+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9D21BA292E6DA90056A8FF /* CDLocations+CoreDataClass.swift */; };
 		5B9D21BE292E6DA90056A8FF /* CDLocations+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9D21BB292E6DA90056A8FF /* CDLocations+CoreDataProperties.swift */; };
+		5B9D21C0292E9CEF0056A8FF /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9D21BF292E9CEF0056A8FF /* MapViewModel.swift */; };
+		5B9D21C5292E9EDC0056A8FF /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9D21C3292E9EDC0056A8FF /* MapViewController.swift */; };
+		5B9D21C6292E9EDC0056A8FF /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B9D21C4292E9EDC0056A8FF /* MapViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,8 +73,6 @@
 		5B15C286292B9EEA00058878 /* DragonBallAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DragonBallAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B3ED417292BFB840026B419 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5B3ED418292BFB840026B419 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
-		5B3ED41D292C024D0026B419 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		5B3ED41E292C024D0026B419 /* MapViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
 		5B3ED421292C02AF0026B419 /* NetworkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkModel.swift; sourceTree = "<group>"; };
 		5B3ED423292C02E20026B419 /* HeroModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroModel.swift; sourceTree = "<group>"; };
 		5B3ED425292C030D0026B419 /* TransformationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformationModel.swift; sourceTree = "<group>"; };
@@ -94,6 +93,9 @@
 		5B9D21B7292E64AB0056A8FF /* LocalDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataModel.swift; sourceTree = "<group>"; };
 		5B9D21BA292E6DA90056A8FF /* CDLocations+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDLocations+CoreDataClass.swift"; sourceTree = "<group>"; };
 		5B9D21BB292E6DA90056A8FF /* CDLocations+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDLocations+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		5B9D21BF292E9CEF0056A8FF /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		5B9D21C3292E9EDC0056A8FF /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = ../Views/MapViewController.swift; sourceTree = "<group>"; };
+		5B9D21C4292E9EDC0056A8FF /* MapViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,7 +124,7 @@
 				5B14A290292C588300934566 /* HomeTableViewController.swift */,
 				5B14A285292C4E9B00934566 /* HomeTableViewCell.swift */,
 				5B765806292D06F100CE6614 /* DetailViewController.swift */,
-				5B3ED41D292C024D0026B419 /* MapViewController.swift */,
+				5B9D21C3292E9EDC0056A8FF /* MapViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -212,6 +214,7 @@
 			children = (
 				5B9D21B5292E63E80056A8FF /* LoginViewModel.swift */,
 				5B9D21AB292D23AC0056A8FF /* HomeTableViewModel.swift */,
+				5B9D21BF292E9CEF0056A8FF /* MapViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -232,7 +235,7 @@
 				5B14A291292C588300934566 /* HomeTableViewController.xib */,
 				5B14A286292C4E9B00934566 /* HomeTableViewCell.xib */,
 				5B765807292D06F100CE6614 /* DetailViewController.xib */,
-				5B3ED41E292C024D0026B419 /* MapViewController.xib */,
+				5B9D21C4292E9EDC0056A8FF /* MapViewController.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -339,9 +342,9 @@
 				5B15C280292B9EE900058878 /* LaunchScreen.storyboard in Resources */,
 				5B765809292D06F100CE6614 /* DetailViewController.xib in Resources */,
 				5B15C27D292B9EE900058878 /* Assets.xcassets in Resources */,
+				5B9D21C6292E9EDC0056A8FF /* MapViewController.xib in Resources */,
 				5B14A288292C4E9B00934566 /* HomeTableViewCell.xib in Resources */,
 				5B14A293292C588300934566 /* HomeTableViewController.xib in Resources */,
-				5B3ED420292C024D0026B419 /* MapViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,8 +375,10 @@
 				5B3ED424292C02E20026B419 /* HeroModel.swift in Sources */,
 				5B9D21B1292D52680056A8FF /* CDHero+CoreDataClass.swift in Sources */,
 				5B3ED426292C030D0026B419 /* TransformationModel.swift in Sources */,
+				5B9D21C5292E9EDC0056A8FF /* MapViewController.swift in Sources */,
 				5B15C27B292B9EE800058878 /* DBZ.xcdatamodeld in Sources */,
 				5B15C271292B9EE800058878 /* AppDelegate.swift in Sources */,
+				5B9D21C0292E9CEF0056A8FF /* MapViewModel.swift in Sources */,
 				5B14A292292C588300934566 /* HomeTableViewController.swift in Sources */,
 				5B15C273292B9EE800058878 /* SceneDelegate.swift in Sources */,
 				5B9D21B8292E64AB0056A8FF /* LocalDataModel.swift in Sources */,
@@ -384,7 +389,6 @@
 				5B9D21B2292D52680056A8FF /* CDHero+CoreDataProperties.swift in Sources */,
 				5B9D21BE292E6DA90056A8FF /* CDLocations+CoreDataProperties.swift in Sources */,
 				5B9D21B6292E63E80056A8FF /* LoginViewModel.swift in Sources */,
-				5B3ED41F292C024D0026B419 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

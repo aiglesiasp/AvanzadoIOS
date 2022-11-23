@@ -15,7 +15,7 @@ class MapViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
     
     //MARK: - Variables
-    //var viewModel = HomeViewModel()
+    var viewModel = MapMiewModel()
     
     
     //MARK: - Cicle of life
@@ -41,7 +41,7 @@ class MapViewController: UIViewController {
 
     //MARK: - Configuration Maps
     func setupMap() {
-        mapView.showsUserLocation = true
+        //mapView.showsUserLocation = true
         //mapView.centerLocation(location: CLLocation(latitude: 21.282, longitude: -157.82944))
         
         
