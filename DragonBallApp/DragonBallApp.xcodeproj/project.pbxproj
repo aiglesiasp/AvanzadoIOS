@@ -21,6 +21,7 @@
 		5B338D88292F84FB00084698 /* LocalDataModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B338D87292F84FB00084698 /* LocalDataModelTest.swift */; };
 		5B338D8A292F867500084698 /* noTransformation.json in Resources */ = {isa = PBXBuildFile; fileRef = 5B338D89292F867500084698 /* noTransformation.json */; };
 		5B338D8C292F867B00084698 /* transformation.json in Resources */ = {isa = PBXBuildFile; fileRef = 5B338D8B292F867B00084698 /* transformation.json */; };
+		5B338D8E292F909F00084698 /* LoginViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B338D8D292F909F00084698 /* LoginViewModelTest.swift */; };
 		5B3ED419292BFB840026B419 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3ED417292BFB840026B419 /* LoginViewController.swift */; };
 		5B3ED41A292BFB840026B419 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B3ED418292BFB840026B419 /* LoginViewController.xib */; };
 		5B3ED422292C02AF0026B419 /* NetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3ED421292C02AF0026B419 /* NetworkModel.swift */; };
@@ -78,6 +79,7 @@
 		5B338D87292F84FB00084698 /* LocalDataModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataModelTest.swift; sourceTree = "<group>"; };
 		5B338D89292F867500084698 /* noTransformation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = noTransformation.json; sourceTree = "<group>"; };
 		5B338D8B292F867B00084698 /* transformation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = transformation.json; sourceTree = "<group>"; };
+		5B338D8D292F909F00084698 /* LoginViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTest.swift; sourceTree = "<group>"; };
 		5B3ED417292BFB840026B419 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5B3ED418292BFB840026B419 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		5B3ED421292C02AF0026B419 /* NetworkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkModel.swift; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 				5B338D87292F84FB00084698 /* LocalDataModelTest.swift */,
 				5B3ED431292C105F0026B419 /* NetworkModelTest.swift */,
 				5B3ED435292C11490026B419 /* URLSessionMock.swift */,
+				5B338D8D292F909F00084698 /* LoginViewModelTest.swift */,
 				5B3ED437292C12140026B419 /* heroes.json */,
 				5B3ED439292C121B0026B419 /* noHeroes.json */,
 				5B3ED43B292C12240026B419 /* location.json */,
@@ -411,6 +414,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B338D8E292F909F00084698 /* LoginViewModelTest.swift in Sources */,
 				5B3ED436292C11490026B419 /* URLSessionMock.swift in Sources */,
 				5B3ED432292C105F0026B419 /* NetworkModelTest.swift in Sources */,
 				5B338D88292F84FB00084698 /* LocalDataModelTest.swift in Sources */,

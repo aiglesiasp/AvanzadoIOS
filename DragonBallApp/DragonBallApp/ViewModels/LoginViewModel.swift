@@ -45,10 +45,6 @@ final class LoginViewModel {
             self?.keychain.set(token, forKey: "KCToken")
             self?.onLogin?()
             
-            
-            
-            
-            
         }
     }
     
