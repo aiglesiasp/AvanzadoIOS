@@ -18,3 +18,4 @@ class NetWorkModelSpy: NetworkModel {
         completion(nil,nil)
     }
 }
+

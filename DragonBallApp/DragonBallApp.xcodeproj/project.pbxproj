@@ -188,9 +188,9 @@
 		5B15C289292B9EEA00058878 /* DragonBallAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				5B8B7E9A297060470058E15A /* Utils */,
 				5B338D87292F84FB00084698 /* LocalDataModelTest.swift */,
 				5B3ED431292C105F0026B419 /* NetworkModelTest.swift */,
-				5B3ED435292C11490026B419 /* URLSessionMock.swift */,
 				5B338D8D292F909F00084698 /* LoginViewModelTest.swift */,
 				5B3ED437292C12140026B419 /* heroes.json */,
 				5B3ED439292C121B0026B419 /* noHeroes.json */,
@@ -198,7 +198,6 @@
 				5B3ED43D292C122A0026B419 /* noLocation.json */,
 				5B338D89292F867500084698 /* noTransformation.json */,
 				5B338D8B292F867B00084698 /* transformation.json */,
-				5B338D8F292F938B00084698 /* NetworkModelSpy.swift */,
 			);
 			path = DragonBallAppTests;
 			sourceTree = "<group>";
@@ -225,6 +224,15 @@
 				5B9D21B7292E64AB0056A8FF /* LocalDataModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		5B8B7E9A297060470058E15A /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				5B3ED435292C11490026B419 /* URLSessionMock.swift */,
+				5B338D8F292F938B00084698 /* NetworkModelSpy.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		5B9D21A4292D10CC0056A8FF /* ViewModels */ = {
