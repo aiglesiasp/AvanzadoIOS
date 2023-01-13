@@ -49,9 +49,14 @@ final class MapMiewModel {
     func getHeroesAnnotations(completion: (MKPointAnnotation) -> Void) {
         guard let hero = hero else {return}
         getHeroesLocationCoreData(for: hero.id)
+        let latitudReceived = locations.first?.latitud
+        let longitudReceived = locations.first?.longitud
+        guard let latitudVerify = latitudReceived else {return}
+        guard let longitudVerify = longitudReceived else {return}
+        
     
-        let latitud = Double(locations.first!.latitud)
-        let longitud = Double(locations.first!.longitud)
+        let latitud = Double(latitudVerify)
+        let longitud = Double(longitudVerify)
         guard let latitud = latitud,
               let longitud = longitud else {return}
         let annotations = MKPointAnnotation()
