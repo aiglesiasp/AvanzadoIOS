@@ -17,6 +17,8 @@ class HomeTableViewCell: UITableViewCell {
     func setHero(model:Hero) {
         self.heroeName.text = model.name
         self.heroeDescription.text = model.description
-        self.heroeImage.setImage(url: model.photo)
+        let url = URL(string: model.photo)
+        guard let url = url  else {return}
+        self.heroeImage.setImage(url: url)
     }
 }

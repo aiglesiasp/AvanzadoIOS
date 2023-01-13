@@ -20,7 +20,7 @@ extension CDHero {
     @NSManaged public var heroDescription: String
     @NSManaged public var id: String
     @NSManaged public var name: String
-    @NSManaged public var photoUrl: URL
+    @NSManaged public var photoUrl: String
     @NSManaged public var locations: NSSet?
 
 }

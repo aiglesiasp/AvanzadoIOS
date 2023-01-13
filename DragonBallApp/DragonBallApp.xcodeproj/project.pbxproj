@@ -188,10 +188,12 @@
 		5B15C289292B9EEA00058878 /* DragonBallAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				5BF2E0ED29708F79008DE02D /* Mock */,
+				5BF2E0EC29708F58008DE02D /* ViewControllers */,
+				5BF2E0EB29708EFE008DE02D /* Models */,
+				5BF2E0EA29708ED1008DE02D /* Spy */,
+				5BF2E0E929708EA7008DE02D /* VIewModels */,
 				5B8B7E9A297060470058E15A /* Utils */,
-				5B338D87292F84FB00084698 /* LocalDataModelTest.swift */,
-				5B3ED431292C105F0026B419 /* NetworkModelTest.swift */,
-				5B338D8D292F909F00084698 /* LoginViewModelTest.swift */,
 				5B3ED437292C12140026B419 /* heroes.json */,
 				5B3ED439292C121B0026B419 /* noHeroes.json */,
 				5B3ED43B292C12240026B419 /* location.json */,
@@ -229,8 +231,7 @@
 		5B8B7E9A297060470058E15A /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				5B3ED435292C11490026B419 /* URLSessionMock.swift */,
-				5B338D8F292F938B00084698 /* NetworkModelSpy.swift */,
+				5B3ED431292C105F0026B419 /* NetworkModelTest.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -274,6 +275,45 @@
 				5B15C27E292B9EE900058878 /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		5BF2E0E929708EA7008DE02D /* VIewModels */ = {
+			isa = PBXGroup;
+			children = (
+				5B338D8D292F909F00084698 /* LoginViewModelTest.swift */,
+			);
+			path = VIewModels;
+			sourceTree = "<group>";
+		};
+		5BF2E0EA29708ED1008DE02D /* Spy */ = {
+			isa = PBXGroup;
+			children = (
+				5B338D8F292F938B00084698 /* NetworkModelSpy.swift */,
+			);
+			path = Spy;
+			sourceTree = "<group>";
+		};
+		5BF2E0EB29708EFE008DE02D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5B338D87292F84FB00084698 /* LocalDataModelTest.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5BF2E0EC29708F58008DE02D /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		5BF2E0ED29708F79008DE02D /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				5B3ED435292C11490026B419 /* URLSessionMock.swift */,
+			);
+			path = Mock;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

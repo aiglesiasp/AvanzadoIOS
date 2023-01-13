@@ -55,11 +55,12 @@ final class HomeTableViewModel {
             //MARK: CONSEGUIMOS EL TOKEN
             guard let token = keychain.get("KCToken") else {return}
             networkModel.token = token
+            print(token)
             //MARK: LLAMADA A LA RED
             networkModel.getHeroes { [weak self] heroes, error in
                 
                 if let error = error {
-                    self?.onError?("Heroes \(error.localizedDescription)")
+                    self?.onError?("Heroes \(error)")
                 } else {
                     self?.save(heroes: heroes)
                     
