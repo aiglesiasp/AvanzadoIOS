@@ -13,6 +13,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var heroeImage: UIImageView!
     @IBOutlet weak var heroeName: UILabel!
     @IBOutlet weak var heroeDescription: UITextView!
+    @IBOutlet weak var buttonLocations: UIButton!
     
     //Declaro variable simple de heroe
     private var hero: Hero?

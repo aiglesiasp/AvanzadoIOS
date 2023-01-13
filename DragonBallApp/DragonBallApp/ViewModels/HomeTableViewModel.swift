@@ -8,7 +8,7 @@
 import UIKit
 import KeychainSwift
 
-final class HomeTableViewModel {
+class HomeTableViewModel {
     
     private var networkModel: NetworkModel
     private var keychain: KeychainSwift

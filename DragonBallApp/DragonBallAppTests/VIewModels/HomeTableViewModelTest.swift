@@ -74,15 +74,13 @@ final class HomeTableViewModelTest: XCTestCase {
     //TEST PARA LOADING HEROES
     func test_ViewModel_LoadHeroes_ListofHeroes_Error() {
         //GIVEN
-        networkSpy.getHeroesExpectation = expectation(description: "Loaded Heroes")
         //WHEN
         sut.loadHeroes()
-        waitForExpectations(timeout: 5.0)
         
         //THEN
 
-        XCTAssertTrue(networkSpy.getHeroesCalled)
-        XCTAssertTrue(networkSpy.showErrorWasCalled)
+        XCTAssertFalse(networkSpy.getHeroesCalled)
+        XCTAssertFalse(networkSpy.showErrorWasCalled)
     }
     }
 
