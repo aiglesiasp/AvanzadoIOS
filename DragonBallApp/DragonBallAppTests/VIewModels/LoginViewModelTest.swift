@@ -23,53 +23,53 @@ final class LoginViewModelTest: XCTestCase {
     //MARK: - DESPUES -
     override func tearDownWithError() throws {
         sut = nil
+        networkSpy = nil
         try super.tearDownWithError()
     }
 
     //MARK: - TEST LOGIN VIEWMODEL -
     func test_ViewModel_LoginService_Token_Succes() {
-        var retrievedToken: String?
-        var error: NetworkError?
-        
+        //GIVEN
         let user = "Paco"
         let password = "123456"
         //WHEN - Llamamos al LOGIN
         sut.login(with: user, password: password)
-            
+        XCTAssertTrue(networkSpy.loadingWasCalled)
+        XCTAssertFalse(networkSpy.showErrorWasCalled)
         
         //THEN
         
         }
     
     func test_ViewModel_LoginService_Token_ErrorDattaFormatting() {
-        var retrievedToken: String?
-        var error: NetworkError?
-        
+        //GIVEN
         let user = ""
         let password = "123456"
+        
         //WHEN - Llamamos al LOGIN
         sut.login(with: user, password: password)
-            
         
         //THEN
-        
+        XCTAssertTrue(networkSpy.loadingWasCalled)
+        XCTAssertTrue(networkSpy.showErrorWasCalled)
         }
     
     func test_ViewModel_LoginService_Token_ErrorTokenFormat() {
-        var retrievedToken: String?
-        var error: NetworkError?
-        
+        //GIVEN
         let user = "Paco1"
         let password = "12345689"
+        
         //WHEN - Llamamos al LOGIN
-        var actual = sut.login(with: user, password: password)
-        
-        
-            
+        sut.login(with: user, password: password)
         
         //THEN
+        XCTAssertTrue(networkSpy.loadingWasCalled)
+        XCTAssertTrue(networkSpy.showErrorWasCalled)
         
         }
+    
+   
+    
               
     }
 
