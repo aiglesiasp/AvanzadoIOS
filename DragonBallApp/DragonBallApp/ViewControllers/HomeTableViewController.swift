@@ -34,9 +34,6 @@ final class HomeTableViewController: UITableViewController {
         }
         
         viewModel.viewDidLoad()
-        
-        
-        
     }
     
 

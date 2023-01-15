@@ -17,7 +17,7 @@ final class LoginViewController: UIViewController {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var loginButton: UIButton!
     
-    let viewModel = LoginViewModel()
+    var viewModel=LoginViewModel()
     
     //MARK: Cicle of live
     override func viewDidLoad() {
@@ -48,6 +48,7 @@ final class LoginViewController: UIViewController {
         activityIndicator.isHidden = true
     }
     
+    
     //MARK: ACTIONS
     
     @IBAction func loginPress(_ sender: Any) {
@@ -62,9 +63,6 @@ final class LoginViewController: UIViewController {
         }
         
         viewModel.login(with: user, password: password)
-        
-       
 
-        
     }
 }

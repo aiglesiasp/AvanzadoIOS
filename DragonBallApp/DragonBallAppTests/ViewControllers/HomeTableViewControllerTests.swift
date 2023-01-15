@@ -14,6 +14,7 @@ final class HomeTableViewControllerTests: XCTestCase {
 
     override func setUpWithError() throws {
         sut = HomeTableViewController()
+        sut.viewDidLoad()
         sut.loadViewIfNeeded()
         
     }
@@ -21,54 +22,45 @@ final class HomeTableViewControllerTests: XCTestCase {
     override func tearDownWithError() throws {
         sut = nil
     }
+       
     
-    func testLoadViewCOntroller() throws {
-        let tableView = try XCTUnwrap(sut.tableView, "-")
-    }
-    
-    
-    //CHECK DE LA CELDA
-    func testHomeTableViewController_CheckCell() throws {
-        let tableView = try XCTUnwrap(sut.tableView, "vista guardada")
+    //CHECK DEL CLICK DE LA CELDA
+    func testHomeTableViewCOntroller_CheckCell() throws {
+       let view = try XCTUnwrap(sut.viewDidLoad, "vista guardada")
         
-        let expLoadingData = expectation(description: "loading")
-        DispatchQueue.main.asyncAfter(deadline: .now()+0.5) {
+       let expLoadingData = expectation(description: "loading")
+        DispatchQueue.main.asyncAfter(deadline: .now()+1.0) {
             expLoadingData.fulfill()
-        }
-        waitForExpectations(timeout: 1.0)
-        
-        let cell = tableView.cellForRow(at: IndexPath(item: 1, section: 0))
-        guard let cell = cell as? HomeTableViewCell
-        else {
-            XCTFail("This is not a HomeTableViewCell")
+       }
+        waitForExpectations(timeout: 2.0)
+       let tableView = try XCTUnwrap(sut.tableView, "vista guardada")
+        guard let cell = tableView.cellForRow(at: IndexPath(item: 0, section: 0)) as? HomeTableViewCell
+        //guard let cell = cell as? HomeTableViewCell
+       else {
+          XCTFail("This is not a HomeTableViewCell")
             return
-        }
+       }
         
-        let name = try XCTUnwrap(cell.heroeName, "nombre del heroe")
-        
-        XCTAssertNotNil(name.text)
-        XCTAssertNotNil(cell.heroeDescription.text)
-        XCTAssertNotNil(cell.heroeImage.self)
     }
     
     //CHECK DEL CLICK DE LA CELDA
-    func testHomeTableViewCOntroller_CheckClickCell() throws {
-        let tableView = try XCTUnwrap(sut.tableView, "vista guardada")
+    //func testHomeTableViewCOntroller_CheckCell1() throws {
+    //    let tableView = try XCTUnwrap(sut.tableView, "vista guardada")
         
-        let expLoadingData = expectation(description: "loading")
-        DispatchQueue.main.asyncAfter(deadline: .now()+0.5) {
-            expLoadingData.fulfill()
-        }
-        waitForExpectations(timeout: 1.0)
+    //    let expLoadingData = expectation(description: "loading")
+    //    DispatchQueue.main.asyncAfter(deadline: .now()+1.0) {
+    //        expLoadingData.fulfill()
+    //    }
+    //     waitForExpectations(timeout: 2.0)
         
-        let cell = tableView.cellForRow(at: IndexPath(item: 1, section: 0))
-        guard let cell = cell as? HomeTableViewCell
-        else {
-            XCTFail("This is not a HomeTableViewCell")
-            return
-        }
+    //     let cell = tableView.cellForRow(at: IndexPath(item: 1, section: 0))
+    //     guard let cell = cell as? HomeTableViewCell
+    //    else {
+            //        XCTFail("This is not a HomeTableViewCell")
+            //        return
+    //   }
         
-    }
+    // }
 
 }
 

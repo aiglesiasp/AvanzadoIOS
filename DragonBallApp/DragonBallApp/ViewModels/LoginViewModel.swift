@@ -11,12 +11,9 @@ import KeychainSwift
 final class LoginViewModel {
     private var networkModel: NetworkModel
     private var keychain: KeychainSwift
-    
-    //Para comunicrme con la vista que hay un error
     var onError: ((String) -> Void)?
     var onLogin: (() -> Void)?
     
-    //init
     init(networkModel: NetworkModel = NetworkModel(),
          keychain: KeychainSwift = KeychainSwift(),
          onError: ((String) -> Void)? = nil,
@@ -28,8 +25,6 @@ final class LoginViewModel {
         self.onLogin = onLogin
     }
     
-    
-    //MARK: LOGIN
     func login(with user: String, password: String) {
         networkModel.login(user: user, password: password) { [weak self] token, error in
             if let error = error {
@@ -44,8 +39,7 @@ final class LoginViewModel {
             
             self?.keychain.set(token, forKey: "KCToken")
             self?.onLogin?()
-            
+    
         }
     }
-    
 }

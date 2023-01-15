@@ -67,9 +67,6 @@ final class LoginViewModelTest: XCTestCase {
         XCTAssertTrue(networkSpy.showErrorWasCalled)
         
         }
-    
-   
-    
               
     }
 

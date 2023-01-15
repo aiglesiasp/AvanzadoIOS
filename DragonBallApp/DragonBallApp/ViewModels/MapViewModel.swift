@@ -28,7 +28,6 @@ final class MapMiewModel {
         if CLLocationManager.locationServicesEnabled() {
             checkLocationAuthorization()
         } else {
-            //Errores
         }
     }
     

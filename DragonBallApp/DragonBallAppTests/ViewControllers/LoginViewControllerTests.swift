@@ -12,7 +12,9 @@ final class LoginViewControllerTests: XCTestCase {
     
     var sut: LoginViewController!
     
+    
     override func setUpWithError() throws {
+        super.setUp()
         sut = LoginViewController()
         sut.loadViewIfNeeded()
         
@@ -20,8 +22,10 @@ final class LoginViewControllerTests: XCTestCase {
     
     override func tearDownWithError() throws {
         sut = nil
+        super.tearDown()
     }
     
+    //MARK: - CHECK BUTTONLOGIN -
     func testLoginViewCOntroller_CheckClickButtonLogin () throws {
         let buttonlogin = try XCTUnwrap(sut.loginButton)
         
@@ -32,15 +36,14 @@ final class LoginViewControllerTests: XCTestCase {
         waitForExpectations(timeout: 1.0)
         
         let navigationSpy = NavigationControllerSpy(rootViewController: sut)
-        sut.loginPress(Any.self)
+        sut.loginPress("")
         guard let vc = navigationSpy.pushVC as? HomeTableViewController else {
             XCTFail("Fallo navegacion de Login a Home")
             return
-            
         }
         XCTAssertTrue(vc.isKind(of: HomeTableViewController.self))
         
-        
-        
     }
 }
+    
+

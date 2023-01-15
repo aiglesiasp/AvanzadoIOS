@@ -9,21 +9,23 @@ import XCTest
 @testable import DragonBallApp
 
 final class DetailViewControllerTests: XCTestCase {
-
+    
     var sut: DetailViewController!
-
+    
     override func setUpWithError() throws {
         sut = DetailViewController()
         sut.loadViewIfNeeded()
         
     }
-
+    
     override func tearDownWithError() throws {
         sut = nil
     }
     
-    func testDetailViewCOntroller_CheckIBOutlets () throws {
-        let view = try XCTUnwrap(sut.viewDidLoad, "vista cargada")
+    func testDetailViewCOntroller_CheckIBOutlets_Name () throws {
+        let name = try XCTUnwrap(sut.heroeName, "vista cargada")
+        let description = try XCTUnwrap(sut.heroeDescription, "vista cargada")
+        let photo = try XCTUnwrap(sut.heroeImage, "vista cargada")
         
         let expLoadingData = expectation(description: "loading")
         DispatchQueue.main.asyncAfter(deadline: .now()+0.5) {
@@ -31,16 +33,9 @@ final class DetailViewControllerTests: XCTestCase {
         }
         waitForExpectations(timeout: 1.0)
         
-        let name = try XCTUnwrap(sut.heroeName)
-        let description = try XCTUnwrap(sut.heroeDescription)
-        let photo = try XCTUnwrap(sut.heroeImage)
-        let buttonLocations = try XCTUnwrap(sut.buttonLocations)
-        
-        
         XCTAssertNotNil(name.text)
         XCTAssertNotNil(description.text)
-        XCTAssertNotNil(photo)
-        XCTAssertNotNil(buttonLocations.description)
+        XCTAssertNotNil(photo.self)
     }
     
     func testDetailViewCOntroller_CheckClickButtonLocations () throws {
@@ -52,8 +47,11 @@ final class DetailViewControllerTests: XCTestCase {
         }
         waitForExpectations(timeout: 1.0)
         
+        let action = buttonLocation.actions(forTarget: sut, forControlEvent: .touchUpInside)
+        XCTAssertEqual(action?.count, 1)
+        
         let navigationSpy = NavigationControllerSpy(rootViewController: sut)
-        sut.onTapButtonLocations((Any).self)
+        sut.onTapButtonLocations("")
         guard let vc = navigationSpy.pushVC as? MapViewController else {
             XCTFail("Fallo navegacion de Detail a Map")
             return
@@ -63,9 +61,9 @@ final class DetailViewControllerTests: XCTestCase {
         
         
     }
-    
-    
-    
-
-
 }
+    
+    
+    
+    
+

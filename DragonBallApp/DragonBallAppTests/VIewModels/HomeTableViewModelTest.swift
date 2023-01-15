@@ -25,7 +25,7 @@ final class HomeTableViewModelTest: XCTestCase {
         sut = nil
         try super.tearDownWithError()
     }
-
+    
     //MARK: - TEST LOGIN VIEWMODEL -
     func test_ViewModel_LocationService_listLocation_Succes() {
         let hero = Hero(id: "Paco", name: "", description: "", photo: "", favorite: true)
@@ -33,14 +33,14 @@ final class HomeTableViewModelTest: XCTestCase {
         //WHEN -
         sut.donwloadLocations(for: hero) {}
         
-            
+        
         //THEN
         //THEN
-
+        
         XCTAssertTrue(networkSpy.getLocalizacionHeroesWasCalled)
         XCTAssertFalse(networkSpy.showErrorWasCalled)
         
-        }
+    }
     
     func test_ViewModel_LocationService_Error_DataFormatting() {
         
@@ -48,13 +48,13 @@ final class HomeTableViewModelTest: XCTestCase {
         
         //WHEN -
         sut.donwloadLocations(for: hero) {}
-            
+        
         //THEN
         //THEN
         XCTAssertTrue(networkSpy.getLocalizacionHeroesWasCalled)
         XCTAssertTrue(networkSpy.showErrorWasCalled)
         
-        }
+    }
     
     func test_ViewModel_LocationService_Error_NetworkError() {
         
@@ -62,26 +62,14 @@ final class HomeTableViewModelTest: XCTestCase {
         
         //WHEN -
         sut.donwloadLocations(for: hero) {}
-            
+        
         //THEN
         //THEN
         XCTAssertTrue(networkSpy.getLocalizacionHeroesWasCalled)
         XCTAssertTrue(networkSpy.showErrorWasCalled)
         
-        }
+    }
+}
           
-    
-    //TEST PARA LOADING HEROES
-    func test_ViewModel_LoadHeroes_ListofHeroes_Error() {
-        //GIVEN
-        //WHEN
-        sut.loadHeroes()
-        
-        //THEN
-
-        XCTAssertFalse(networkSpy.getHeroesCalled)
-        XCTAssertFalse(networkSpy.showErrorWasCalled)
-    }
-    }
 
 

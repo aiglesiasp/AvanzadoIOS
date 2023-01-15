@@ -8,7 +8,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "9EA5038D-019B-4DA0-A96C-597852745B58"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DragonBallApp/Utils/NetworkModel.swift"
@@ -24,19 +24,19 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "0A9A0DE6-F92D-4F0C-9092-7D744EA1B63B"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DragonBallApp/ViewModels/HomeTableViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
             landmarkName = "loadHeroes()"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "0A9A0DE6-F92D-4F0C-9092-7D744EA1B63B - 50cf04a27faf04bd"
+                  uuid = "0A9A0DE6-F92D-4F0C-9092-7D744EA1B63B - 50cf04a27faf049c"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -46,9 +46,9 @@
                   urlString = "file:///Users/aitor/Documents/0-REPOSITORIO%20GIT%20AITOR/AvanzadoIOS/DragonBallApp/DragonBallApp/ViewModels/HomeTableViewModel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "70"
-                  endingLineNumber = "70"
-                  offsetFromSymbolStart = "115">
+                  startingLineNumber = "71"
+                  endingLineNumber = "71"
+                  offsetFromSymbolStart = "157">
                </Location>
                <Location
                   uuid = "0A9A0DE6-F92D-4F0C-9092-7D744EA1B63B - 248f8ae63e4f2f64"
@@ -63,7 +63,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "71"
                   endingLineNumber = "71"
-                  offsetFromSymbolStart = "20">
+                  offsetFromSymbolStart = "16">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -72,7 +72,23 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "A1F7DC31-A244-4543-B071-CB5394AF4AF6"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DragonBallApp/ViewModels/HomeTableViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
+            landmarkName = "donwloadLocations(for:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "49622DA2-142F-4600-8A71-30665C199DD3"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DragonBallApp/ViewModels/HomeTableViewModel.swift"
@@ -87,22 +103,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "49622DA2-142F-4600-8A71-30665C199DD3"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DragonBallApp/ViewModels/HomeTableViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
-            landmarkName = "donwloadLocations(for:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "962AF49F-D7A4-4FE0-BAF8-7F81B02ECA32"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -110,8 +110,8 @@
             filePath = "DragonBallApp/ViewModels/HomeTableViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "110"
-            endingLineNumber = "110"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
             landmarkName = "donwloadLocations(for:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -168,7 +168,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "B90CDE01-3963-441E-BD29-D8360A5AB82B"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DragonBallApp/Utils/NetworkModel.swift"
@@ -181,7 +181,7 @@
             <Locations>
                <Location
                   uuid = "B90CDE01-3963-441E-BD29-D8360A5AB82B - 6f5f0727892d008d"
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "DragonBallApp.NetworkModel.getLocalizacionHeroes(id: Swift.String, completion: (Swift.Array&lt;DragonBallApp.HeroCoordenates&gt;, Swift.Optional&lt;DragonBallApp.NetworkError&gt;) -&gt; ()) -&gt; ()"
@@ -192,11 +192,11 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "187"
                   endingLineNumber = "187"
-                  offsetFromSymbolStart = "1622">
+                  offsetFromSymbolStart = "1640">
                </Location>
                <Location
-                  uuid = "B90CDE01-3963-441E-BD29-D8360A5AB82B - aa0b93f5f8e13cf2"
-                  shouldBeEnabled = "Yes"
+                  uuid = "B90CDE01-3963-441E-BD29-D8360A5AB82B - aa0b93f5f8e13f13"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in DragonBallApp.NetworkModel.getLocalizacionHeroes(id: Swift.String, completion: (Swift.Array&lt;DragonBallApp.HeroCoordenates&gt;, Swift.Optional&lt;DragonBallApp.NetworkError&gt;) -&gt; ()) -&gt; ()"
@@ -205,9 +205,9 @@
                   urlString = "file:///Users/aitor/Documents/0-REPOSITORIO%20GIT%20AITOR/AvanzadoIOS/DragonBallApp/DragonBallApp/Utils/NetworkModel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "188"
-                  endingLineNumber = "188"
-                  offsetFromSymbolStart = "193">
+                  startingLineNumber = "187"
+                  endingLineNumber = "187"
+                  offsetFromSymbolStart = "169">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -216,7 +216,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "22FD5C1D-3D1B-43B6-9017-D20CD12DE978"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DragonBallApp/Utils/NetworkModel.swift"
@@ -232,7 +232,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "D8DA4FBF-3D8A-4F15-992A-5E0D31291DA4"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DragonBallApp/Utils/NetworkModel.swift"
@@ -248,7 +248,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "097FA488-0FF8-4EFC-8F86-CCE80F8FCA4D"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DragonBallApp/Utils/NetworkModel.swift"
@@ -264,7 +264,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "C8C6EBEE-75D3-48D4-A711-44C5C61202A3"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DragonBallApp/Utils/NetworkModel.swift"
@@ -344,78 +344,46 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "B0ABEF9C-48F9-474A-94FA-2C8671EB105C"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DragonBallApp/ViewModels/HomeTableViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
             landmarkName = "donwloadLocations(for:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "B1E4D120-C449-4451-A244-400AABB5121B"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DragonBallApp/ViewModels/HomeTableViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "107"
-            endingLineNumber = "107"
-            landmarkName = "donwloadLocations(for:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "71E8B0D5-0809-49CF-8337-E280B4E0D36C"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DragonBallApp/Utils/NetworkModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "200"
-            endingLineNumber = "200"
-            landmarkName = "getLocalizacionHeroes(id:completion:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "71E8B0D5-0809-49CF-8337-E280B4E0D36C - aa0b93f5f8e13d46"
-                  shouldBeEnabled = "Yes"
+                  uuid = "B0ABEF9C-48F9-474A-94FA-2C8671EB105C - 94dc8c22a8f34d5f"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in DragonBallApp.NetworkModel.getLocalizacionHeroes(id: Swift.String, completion: (Swift.Array&lt;DragonBallApp.HeroCoordenates&gt;, Swift.Optional&lt;DragonBallApp.NetworkError&gt;) -&gt; ()) -&gt; ()"
+                  symbolName = "closure #1 (Swift.Array&lt;DragonBallApp.HeroCoordenates&gt;, Swift.Optional&lt;DragonBallApp.NetworkError&gt;) -&gt; () in DragonBallApp.HomeTableViewModel.donwloadLocations(for: DragonBallApp.Hero, completion: () -&gt; ()) -&gt; ()"
                   moduleName = "DragonBallApp"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/aitor/Documents/0-REPOSITORIO%20GIT%20AITOR/AvanzadoIOS/DragonBallApp/DragonBallApp/Utils/NetworkModel.swift"
+                  urlString = "file:///Users/aitor/Documents/0-REPOSITORIO%20GIT%20AITOR/AvanzadoIOS/DragonBallApp/DragonBallApp/ViewModels/HomeTableViewModel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "200"
-                  endingLineNumber = "200"
-                  offsetFromSymbolStart = "504">
+                  startingLineNumber = "106"
+                  endingLineNumber = "106"
+                  offsetFromSymbolStart = "331">
                </Location>
                <Location
-                  uuid = "71E8B0D5-0809-49CF-8337-E280B4E0D36C - aa0b93f5f8e13d46"
-                  shouldBeEnabled = "Yes"
+                  uuid = "B0ABEF9C-48F9-474A-94FA-2C8671EB105C - 94dc8c22a8f34d5f"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in DragonBallApp.NetworkModel.getLocalizacionHeroes(id: Swift.String, completion: (Swift.Array&lt;DragonBallApp.HeroCoordenates&gt;, Swift.Optional&lt;DragonBallApp.NetworkError&gt;) -&gt; ()) -&gt; ()"
+                  symbolName = "closure #1 (Swift.Array&lt;DragonBallApp.HeroCoordenates&gt;, Swift.Optional&lt;DragonBallApp.NetworkError&gt;) -&gt; () in DragonBallApp.HomeTableViewModel.donwloadLocations(for: DragonBallApp.Hero, completion: () -&gt; ()) -&gt; ()"
                   moduleName = "DragonBallApp"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/aitor/Documents/0-REPOSITORIO%20GIT%20AITOR/AvanzadoIOS/DragonBallApp/DragonBallApp/Utils/NetworkModel.swift"
+                  urlString = "file:///Users/aitor/Documents/0-REPOSITORIO%20GIT%20AITOR/AvanzadoIOS/DragonBallApp/DragonBallApp/ViewModels/HomeTableViewModel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "200"
-                  endingLineNumber = "200"
-                  offsetFromSymbolStart = "699">
+                  startingLineNumber = "106"
+                  endingLineNumber = "106"
+                  offsetFromSymbolStart = "506">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -423,23 +391,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "0A515DC9-DEF8-438B-A652-99B007E55E17"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DragonBallApp/ViewModels/HomeTableViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
-            landmarkName = "donwloadLocations(for:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "55012E12-DD9E-4347-8E3A-6D09C3AC30B7"
+            uuid = "B1E4D120-C449-4451-A244-400AABB5121B"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -455,17 +407,129 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "1FB5E491-33D3-4068-97FD-4042F9B930EF"
-            shouldBeEnabled = "Yes"
+            uuid = "71E8B0D5-0809-49CF-8337-E280B4E0D36C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DragonBallApp/Utils/NetworkModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "200"
+            endingLineNumber = "200"
+            landmarkName = "getLocalizacionHeroes(id:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "71E8B0D5-0809-49CF-8337-E280B4E0D36C - aa0b93f5f8e13d46"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in DragonBallApp.NetworkModel.getLocalizacionHeroes(id: Swift.String, completion: (Swift.Array&lt;DragonBallApp.HeroCoordenates&gt;, Swift.Optional&lt;DragonBallApp.NetworkError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "DragonBallApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aitor/Documents/0-REPOSITORIO%20GIT%20AITOR/AvanzadoIOS/DragonBallApp/DragonBallApp/Utils/NetworkModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "200"
+                  endingLineNumber = "200"
+                  offsetFromSymbolStart = "543">
+               </Location>
+               <Location
+                  uuid = "71E8B0D5-0809-49CF-8337-E280B4E0D36C - aa0b93f5f8e13d46"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in DragonBallApp.NetworkModel.getLocalizacionHeroes(id: Swift.String, completion: (Swift.Array&lt;DragonBallApp.HeroCoordenates&gt;, Swift.Optional&lt;DragonBallApp.NetworkError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "DragonBallApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aitor/Documents/0-REPOSITORIO%20GIT%20AITOR/AvanzadoIOS/DragonBallApp/DragonBallApp/Utils/NetworkModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "200"
+                  endingLineNumber = "200"
+                  offsetFromSymbolStart = "738">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0A515DC9-DEF8-438B-A652-99B007E55E17"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DragonBallApp/ViewModels/HomeTableViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
             landmarkName = "donwloadLocations(for:completion:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "55012E12-DD9E-4347-8E3A-6D09C3AC30B7"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DragonBallApp/ViewModels/HomeTableViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
+            landmarkName = "donwloadLocations(for:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1FB5E491-33D3-4068-97FD-4042F9B930EF"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DragonBallApp/ViewModels/HomeTableViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
+            landmarkName = "donwloadLocations(for:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "75D46A1B-C9F5-4CE3-AF23-BB4A6D7C8D73"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DragonBallAppTests/ViewControllers/DetailViewControllerTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A04FBD03-8846-499F-BADC-27DF9E2A8C49"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DragonBallAppTests/ViewControllers/DetailViewControllerTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "DetailViewControllerTests"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

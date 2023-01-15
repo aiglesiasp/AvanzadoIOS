@@ -14,14 +14,11 @@ class HomeTableViewModel {
     private var keychain: KeychainSwift
     private var coreDataManager:  CoreDataManager
     
-    //DECLARAMOS UN ARRAY DE HEROES
     private(set)var heroesArray: [Hero] = []
     
-    //Para comunicrme con la vista que hay un error
     var onError: ((String) -> Void)?
     var onSuccess: (() -> Void)?
     
-    //init
     init(networkModel: NetworkModel = NetworkModel(),
          keychain: KeychainSwift = KeychainSwift(),
          coreDataManager: CoreDataManager = .shared,
@@ -35,7 +32,6 @@ class HomeTableViewModel {
         self.onSuccess = onSuccess
     }
     
-    //llamada a red
     func viewDidLoad() {
         
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
@@ -46,17 +42,15 @@ class HomeTableViewModel {
     func loadHeroes() {
         let cdHeros = coreDataManager.fetchHeros()
         
-        //Hacer llamadas cada X tiempo
         guard let date = LocalDataModel.getSyncDate(),
-              date.addingTimeInterval(1000) > Date(),
+              date.addingTimeInterval(1) > Date(),
               !cdHeros.isEmpty else {
             
             print("Heroes Network Call")
-            //MARK: CONSEGUIMOS EL TOKEN
             guard let token = keychain.get("KCToken") else {return}
             networkModel.token = token
             print(token)
-            //MARK: LLAMADA A LA RED
+            
             networkModel.getHeroes { [weak self] heroes, error in
                 
                 if let error = error {
@@ -85,13 +79,11 @@ class HomeTableViewModel {
             return
         }
         
-        //MARK: Muestro los del coredata
         print("Heroes from Core Data")
         heroesArray = cdHeros.map{ $0.hero }
         onSuccess?()
     }
     
-    //MARK: - Funcion descargar localizaciones
     func donwloadLocations(for hero: Hero, completion: @escaping() -> Void) {
         let cdLocations = coreDataManager.fetchLocations(for: hero.id)
         if cdLocations.isEmpty {
