@@ -51,9 +51,6 @@
 		5B9D21C5292E9EDC0056A8FF /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9D21C3292E9EDC0056A8FF /* MapViewController.swift */; };
 		5B9D21C6292E9EDC0056A8FF /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B9D21C4292E9EDC0056A8FF /* MapViewController.xib */; };
 		5B9D21C8292EA4930056A8FF /* extension+Mapview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9D21C7292EA4930056A8FF /* extension+Mapview.swift */; };
-		5BC5CCCF2971D6AA00437B0D /* LoginViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC5CCCE2971D6AA00437B0D /* LoginViewControllerTests.swift */; };
-		5BC5CCD12971D81300437B0D /* HomeTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC5CCD02971D81300437B0D /* HomeTableViewControllerTests.swift */; };
-		5BC5CCD32972003800437B0D /* DetailViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC5CCD22972003800437B0D /* DetailViewControllerTests.swift */; };
 		5BC5CCD529720D7A00437B0D /* NavigationControllerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC5CCD429720D7A00437B0D /* NavigationControllerSpy.swift */; };
 /* End PBXBuildFile section */
 
@@ -114,9 +111,6 @@
 		5B9D21C3292E9EDC0056A8FF /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = ../Views/MapViewController.swift; sourceTree = "<group>"; };
 		5B9D21C4292E9EDC0056A8FF /* MapViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
 		5B9D21C7292EA4930056A8FF /* extension+Mapview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "extension+Mapview.swift"; sourceTree = "<group>"; };
-		5BC5CCCE2971D6AA00437B0D /* LoginViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerTests.swift; sourceTree = "<group>"; };
-		5BC5CCD02971D81300437B0D /* HomeTableViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewControllerTests.swift; sourceTree = "<group>"; };
-		5BC5CCD22972003800437B0D /* DetailViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewControllerTests.swift; sourceTree = "<group>"; };
 		5BC5CCD429720D7A00437B0D /* NavigationControllerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerSpy.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -202,7 +196,6 @@
 				5BF2E0EA29708ED1008DE02D /* Spy */,
 				5BF2E0EB29708EFE008DE02D /* Models */,
 				5BF2E0E929708EA7008DE02D /* VIewModels */,
-				5BF2E0EC29708F58008DE02D /* ViewControllers */,
 				5B8B7E9A297060470058E15A /* Utils */,
 				5B3ED437292C12140026B419 /* heroes.json */,
 				5B3ED439292C121B0026B419 /* noHeroes.json */,
@@ -311,16 +304,6 @@
 				5B338D87292F84FB00084698 /* LocalDataModelTest.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		5BF2E0EC29708F58008DE02D /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				5BC5CCCE2971D6AA00437B0D /* LoginViewControllerTests.swift */,
-				5BC5CCD02971D81300437B0D /* HomeTableViewControllerTests.swift */,
-				5BC5CCD22972003800437B0D /* DetailViewControllerTests.swift */,
-			);
-			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		5BF2E0ED29708F79008DE02D /* Mock */ = {
@@ -480,12 +463,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5BC5CCD12971D81300437B0D /* HomeTableViewControllerTests.swift in Sources */,
 				5B338D90292F938B00084698 /* NetworkModelSpy.swift in Sources */,
 				5B338D8E292F909F00084698 /* LoginViewModelTest.swift in Sources */,
 				5B8F5ED029717CCC0046BD0B /* HomeTableViewModelTest.swift in Sources */,
-				5BC5CCCF2971D6AA00437B0D /* LoginViewControllerTests.swift in Sources */,
-				5BC5CCD32972003800437B0D /* DetailViewControllerTests.swift in Sources */,
 				5B3ED436292C11490026B419 /* URLSessionMock.swift in Sources */,
 				5BC5CCD529720D7A00437B0D /* NavigationControllerSpy.swift in Sources */,
 				5B3ED432292C105F0026B419 /* NetworkModelTest.swift in Sources */,

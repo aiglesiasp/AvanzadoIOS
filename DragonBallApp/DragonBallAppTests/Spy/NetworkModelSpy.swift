@@ -12,7 +12,6 @@ class NetWorkModelSpy: NetworkModel {
     var showErrorWasCalled: Bool = false
     var loadingWasCalled: Bool = false
     var getHeroesCalled: Bool = false
-    var getHeroesExpectation: XCTestExpectation?
     var getLocalizacionHeroesWasCalled: Bool = false
     var getTransformationWasCalled: Bool = false
 
@@ -45,7 +44,6 @@ class NetWorkModelSpy: NetworkModel {
             getHeroesCalled = true
             showErrorWasCalled = false
             completion([Hero(id: "", name: "Paco", description: "", photo: "", favorite: true)], nil)
-            getHeroesExpectation?.fulfill()
             return
         }
         if(name == "") {
@@ -55,17 +53,14 @@ class NetWorkModelSpy: NetworkModel {
                         Hero(id: "", name: "Raul", description: "", photo: "", favorite: true),
                         Hero(id: "", name: "Santi", description: "", photo: "", favorite: true),
                         Hero(id: "", name: "Manolo", description: "", photo: "", favorite: true)], nil)
-            getHeroesExpectation?.fulfill()
             return
         }
         if(name == "ERROR_NETWORK") {
             getHeroesCalled = true
             showErrorWasCalled = true
             completion([], NetworkError.malformedURL)
-            getHeroesExpectation?.fulfill()
             return
         }
-        getHeroesExpectation?.fulfill()
         completion([],nil)
     }
     

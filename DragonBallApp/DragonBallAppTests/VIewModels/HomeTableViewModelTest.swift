@@ -23,10 +23,10 @@ final class HomeTableViewModelTest: XCTestCase {
     //MARK: - DESPUES -
     override func tearDownWithError() throws {
         sut = nil
-        try super.tearDownWithError()
+        networkSpy = nil
     }
     
-    //MARK: - TEST LOGIN VIEWMODEL -
+    //MARK: - TEST HOMETABLE VIEWMODEL LOCATINSERVICE -
     func test_ViewModel_LocationService_listLocation_Succes() {
         let hero = Hero(id: "Paco", name: "", description: "", photo: "", favorite: true)
         
@@ -69,6 +69,39 @@ final class HomeTableViewModelTest: XCTestCase {
         XCTAssertTrue(networkSpy.showErrorWasCalled)
         
     }
+    
+    //MARK: - TEST HOMETABLE VIEWMODEL GETHROES SERVICE -
+    func test_ViewModel_LoadHeroes_listHeroes_Error() {
+        
+        let hero = Hero(id: "Paco", name: "", description: "", photo: "", favorite: true)
+        //WHEN -
+        sut.loadHeroes()
+        sut.donwloadLocations(for: hero) {
+            print(hero.name)
+        }
+        
+        
+        //THEN
+        //THEN
+        
+        XCTAssertFalse(networkSpy.getHeroesCalled)
+        XCTAssertFalse(networkSpy.showErrorWasCalled)
+        
+    }
+    
+    func test_ViewModel_LoadHeroes_listHeroes_CallWithError() {
+        
+        //WHEN -
+        sut.loadHeroes()
+        
+        //THEN
+        //THEN
+        
+        XCTAssertTrue(networkSpy.getHeroesCalled)
+        XCTAssertTrue(networkSpy.showErrorWasCalled)
+        
+    }
+    
 }
           
 
