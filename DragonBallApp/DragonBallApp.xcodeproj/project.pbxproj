@@ -51,11 +51,21 @@
 		5B9D21C5292E9EDC0056A8FF /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9D21C3292E9EDC0056A8FF /* MapViewController.swift */; };
 		5B9D21C6292E9EDC0056A8FF /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B9D21C4292E9EDC0056A8FF /* MapViewController.xib */; };
 		5B9D21C8292EA4930056A8FF /* extension+Mapview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9D21C7292EA4930056A8FF /* extension+Mapview.swift */; };
+		5BAA55D229796E8E00DD83FB /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAA55D129796E8E00DD83FB /* HomeTableViewController.swift */; };
+		5BAA55DA297971B700DD83FB /* DragonBallAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAA55D9297971B700DD83FB /* DragonBallAppUITests.swift */; };
+		5BAA55DC297971B700DD83FB /* DragonBallAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAA55DB297971B700DD83FB /* DragonBallAppUITestsLaunchTests.swift */; };
 		5BC5CCD529720D7A00437B0D /* NavigationControllerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC5CCD429720D7A00437B0D /* NavigationControllerSpy.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		5B15C287292B9EEA00058878 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B15C265292B9EE800058878 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5B15C26C292B9EE800058878;
+			remoteInfo = DragonBallApp;
+		};
+		5BAA55DD297971B700DD83FB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5B15C265292B9EE800058878 /* Project object */;
 			proxyType = 1;
@@ -111,6 +121,10 @@
 		5B9D21C3292E9EDC0056A8FF /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = ../Views/MapViewController.swift; sourceTree = "<group>"; };
 		5B9D21C4292E9EDC0056A8FF /* MapViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
 		5B9D21C7292EA4930056A8FF /* extension+Mapview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "extension+Mapview.swift"; sourceTree = "<group>"; };
+		5BAA55D129796E8E00DD83FB /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
+		5BAA55D7297971B700DD83FB /* DragonBallAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DragonBallAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BAA55D9297971B700DD83FB /* DragonBallAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragonBallAppUITests.swift; sourceTree = "<group>"; };
+		5BAA55DB297971B700DD83FB /* DragonBallAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragonBallAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		5BC5CCD429720D7A00437B0D /* NavigationControllerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerSpy.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -124,6 +138,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		5B15C283292B9EEA00058878 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BAA55D4297971B700DD83FB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -160,6 +181,7 @@
 			children = (
 				5B15C26F292B9EE800058878 /* DragonBallApp */,
 				5B15C289292B9EEA00058878 /* DragonBallAppTests */,
+				5BAA55D8297971B700DD83FB /* DragonBallAppUITests */,
 				5B15C26E292B9EE800058878 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -169,6 +191,7 @@
 			children = (
 				5B15C26D292B9EE800058878 /* DragonBallApp.app */,
 				5B15C286292B9EEA00058878 /* DragonBallAppTests.xctest */,
+				5BAA55D7297971B700DD83FB /* DragonBallAppUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -192,6 +215,7 @@
 		5B15C289292B9EEA00058878 /* DragonBallAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				5BAA55D029796E6400DD83FB /* Controllers */,
 				5BF2E0ED29708F79008DE02D /* Mock */,
 				5BF2E0EA29708ED1008DE02D /* Spy */,
 				5BF2E0EB29708EFE008DE02D /* Models */,
@@ -247,6 +271,23 @@
 				5B9D21BF292E9CEF0056A8FF /* MapViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		5BAA55D029796E6400DD83FB /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5BAA55D129796E8E00DD83FB /* HomeTableViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		5BAA55D8297971B700DD83FB /* DragonBallAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5BAA55D9297971B700DD83FB /* DragonBallAppUITests.swift */,
+				5BAA55DB297971B700DD83FB /* DragonBallAppUITestsLaunchTests.swift */,
+			);
+			path = DragonBallAppUITests;
 			sourceTree = "<group>";
 		};
 		5BE105AA292B9F630011CAB0 /* App */ = {
@@ -355,6 +396,24 @@
 			productReference = 5B15C286292B9EEA00058878 /* DragonBallAppTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		5BAA55D6297971B700DD83FB /* DragonBallAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5BAA55DF297971B700DD83FB /* Build configuration list for PBXNativeTarget "DragonBallAppUITests" */;
+			buildPhases = (
+				5BAA55D3297971B700DD83FB /* Sources */,
+				5BAA55D4297971B700DD83FB /* Frameworks */,
+				5BAA55D5297971B700DD83FB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5BAA55DE297971B700DD83FB /* PBXTargetDependency */,
+			);
+			name = DragonBallAppUITests;
+			productName = DragonBallAppUITests;
+			productReference = 5BAA55D7297971B700DD83FB /* DragonBallAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -362,7 +421,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1400;
+				LastSwiftUpdateCheck = 1410;
 				LastUpgradeCheck = 1400;
 				TargetAttributes = {
 					5B15C26C292B9EE800058878 = {
@@ -371,6 +430,10 @@
 					5B15C285292B9EEA00058878 = {
 						CreatedOnToolsVersion = 14.0.1;
 						LastSwiftMigration = 1400;
+						TestTargetID = 5B15C26C292B9EE800058878;
+					};
+					5BAA55D6297971B700DD83FB = {
+						CreatedOnToolsVersion = 14.1;
 						TestTargetID = 5B15C26C292B9EE800058878;
 					};
 				};
@@ -393,6 +456,7 @@
 			targets = (
 				5B15C26C292B9EE800058878 /* DragonBallApp */,
 				5B15C285292B9EEA00058878 /* DragonBallAppTests */,
+				5BAA55D6297971B700DD83FB /* DragonBallAppUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -422,6 +486,13 @@
 				5B338D8A292F867500084698 /* noTransformation.json in Resources */,
 				5B3ED438292C12140026B419 /* heroes.json in Resources */,
 				5B3ED43C292C12240026B419 /* location.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BAA55D5297971B700DD83FB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -463,6 +534,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BAA55D229796E8E00DD83FB /* HomeTableViewController.swift in Sources */,
 				5B338D90292F938B00084698 /* NetworkModelSpy.swift in Sources */,
 				5B338D8E292F909F00084698 /* LoginViewModelTest.swift in Sources */,
 				5B8F5ED029717CCC0046BD0B /* HomeTableViewModelTest.swift in Sources */,
@@ -473,6 +545,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5BAA55D3297971B700DD83FB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BAA55DC297971B700DD83FB /* DragonBallAppUITestsLaunchTests.swift in Sources */,
+				5BAA55DA297971B700DD83FB /* DragonBallAppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -480,6 +561,11 @@
 			isa = PBXTargetDependency;
 			target = 5B15C26C292B9EE800058878 /* DragonBallApp */;
 			targetProxy = 5B15C287292B9EEA00058878 /* PBXContainerItemProxy */;
+		};
+		5BAA55DE297971B700DD83FB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5B15C26C292B9EE800058878 /* DragonBallApp */;
+			targetProxy = 5BAA55DD297971B700DD83FB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -720,6 +806,40 @@
 			};
 			name = Release;
 		};
+		5BAA55E0297971B700DD83FB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.aiglesias.DragonBallAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DragonBallApp;
+			};
+			name = Debug;
+		};
+		5BAA55E1297971B700DD83FB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.aiglesias.DragonBallAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DragonBallApp;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -746,6 +866,15 @@
 			buildConfigurations = (
 				5B15C29E292B9EEA00058878 /* Debug */,
 				5B15C29F292B9EEA00058878 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5BAA55DF297971B700DD83FB /* Build configuration list for PBXNativeTarget "DragonBallAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5BAA55E0297971B700DD83FB /* Debug */,
+				5BAA55E1297971B700DD83FB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

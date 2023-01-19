@@ -40,6 +40,17 @@
                ReferencedContainer = "container:DragonBallApp.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "5BAA55D6297971B700DD83FB"
+               BuildableName = "DragonBallAppUITests.xctest"
+               BlueprintName = "DragonBallAppUITests"
+               ReferencedContainer = "container:DragonBallApp.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
